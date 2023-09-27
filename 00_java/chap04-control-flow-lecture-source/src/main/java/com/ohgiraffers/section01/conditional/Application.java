@@ -7,8 +7,15 @@ public class Application {
 
       //  a.testSimpleIfStatment();
        // a.testNestedIfStatment();
-        B_ifElse b = new B_ifElse();
+       B_ifElse b = new B_ifElse();
       //  b.testSimpleIfElseStatement();
-        b.testNestedIfElseStatement();
+      //  b.testNestedIfElseStatement();
+
+        C_ifElseIf c = new C_ifElseIf();
+        //c.testSimpleIfElseIfStatement();
+        //c.testNestedIfElseIfStattment();
+        D_swich d = new D_swich();
+        //d.testSimpleSwitchStatement();
+        d.testSwitchVendingMachine();
     }
 }
