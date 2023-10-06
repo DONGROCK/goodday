@@ -22,13 +22,13 @@ public class Application {
         member.setWeight(30.0);
         member.setActivated(true);
 
-        System.out.println("회원번호"+ member.getNumber());
-        System.out.println("회원명"+ member.getName());
-        System.out.println("나이"+ member.getAge());
-        System.out.println("성별"+ member.getGender());
-        System.out.println("키"+ member.getHeight());
-        System.out.println("몸무게"+ member.getWeight());
-        System.out.println("회원활성상태"+ member.isActivated());
+        System.out.println("회원번호: "+ member.getNumber());
+        System.out.println("회원명: "+ member.getName());
+        System.out.println("나이: "+ member.getAge());
+        System.out.println("성별: "+ member.getGender());
+        System.out.println("키: "+ member.getHeight());
+        System.out.println("몸무게: "+ member.getWeight());
+        System.out.println("회원활성상태: "+ member.isActivated());
 
 
 
