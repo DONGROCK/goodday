@@ -8,6 +8,54 @@ public class StudentDTO {
     private int eng;
     private int math;
 
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public int getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(int classroom) {
+        this.classroom = classroom;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getKor() {
+        return kor;
+    }
+
+    public void setKor(int kor) {
+        this.kor = kor;
+    }
+
+    public int getEng() {
+        return eng;
+    }
+
+    public void setEng(int eng) {
+        this.eng = eng;
+    }
+
+    public int getMath() {
+        return math;
+    }
+
+    public void setMath(int math) {
+        this.math = math;
+    }
+
     public StudentDTO() {
     }
 
@@ -21,12 +69,12 @@ public class StudentDTO {
         this.math = math;
     }
 
-    public String information(){
+    public String information() {
         return this.grade
-                + this.classroom
-                + this.name
-                + this.kor
-                + this.eng
-                + this.math;
+                + ", " + this.classroom
+                + ", " + this.name
+                + ", " + this.kor
+                + ", " + this.eng
+                + ", " + this.math;
     }
 }
