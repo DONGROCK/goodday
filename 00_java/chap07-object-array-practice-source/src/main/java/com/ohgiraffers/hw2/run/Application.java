@@ -24,7 +24,7 @@ public class Application {
             System.out.print("수학점수 : ");
             int math = sc.nextInt();
 
-
+            //여기도 잘 모르겠음.
             student[count] = new StudentDTO(grade, classroom, name, kor, eng, math);
 
             count++;

@@ -38,6 +38,7 @@ public class Application {
 
             System.out.println (emp[i].getEmpName() + "의 연봉 : " + (int) (emp[i].getSalary() +
                     (emp[i].getSalary() * emp[i].getBonusPoint() ) ) * 12 + "원");
+           //totalSalary += emp.getSalary
         }
 
 
