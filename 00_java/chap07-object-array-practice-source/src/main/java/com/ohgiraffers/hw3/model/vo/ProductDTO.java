@@ -17,11 +17,10 @@ public class ProductDTO {
     }
 
     public String infomation() {
-        return "ProductDTO{" +
-                "pid=" + pid +
-                ", pName='" + pName + '\'' +
-                ", price=" + price +
-                ", tax=" + tax +
-                '}';
+        return
+                  pid +
+                ", " + pName +
+                ", " + price +
+                ", " + tax ;
     }
 }

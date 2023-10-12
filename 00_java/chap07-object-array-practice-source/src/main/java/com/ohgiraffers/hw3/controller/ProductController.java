@@ -9,6 +9,8 @@ public class ProductController {
     ProductDTO[] pro = new ProductDTO[10];
     int count = 0;
     int num;
+    //ProductController productController = new ProductController();
+
     public void mainManu(){
         do {
             System.out.println("===제품관리메뉴===");
@@ -21,13 +23,20 @@ public class ProductController {
             int num = sc.nextInt();
             sc.nextLine();
             if(num == 1){
+              productput();
 
             }
-            if (num == 2){
+            else if (num == 2){
+               productPrint();
 
+            }else if (num == 9){
+                System.out.println("프로그램 종료");
+                 break;
+            } else {
+                System.out.println("번호를 다시 확인해 주세요.");
             }
         }while (num != 9);
-        System.out.println("프로그램 종료");
+        return;
 
 
     }
@@ -36,11 +45,11 @@ public class ProductController {
         Scanner sc = new Scanner(System.in);
         System.out.print("제품번호 입력 : ");
         int pid = sc.nextInt();
-        System.out.println("제품명 입력 : ");
+        System.out.print("제품명 입력 : ");
         String pName = sc.next();
-        System.out.println("제품 가격 입력 : ");
+        System.out.print("제품 가격 입력 : ");
         int price = sc.nextInt();
-        System.out.println("제품 세금 입력 : ");
+        System.out.print("제품 세금 입력 : ");
         double tax = sc.nextDouble();
         pro [count] = new ProductDTO(pid,pName,price,tax);
         count++;
@@ -48,6 +57,10 @@ public class ProductController {
 
     public void productPrint(){
         System.out.println("===입력된 제품 정보===");
+        for (int i = 0; i < count;i++){
+            System.out.println(pro[i].infomation());
+        }
+
 
     }
 
