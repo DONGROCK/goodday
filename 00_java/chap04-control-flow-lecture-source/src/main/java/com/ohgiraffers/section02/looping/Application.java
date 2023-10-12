@@ -17,13 +17,13 @@ public class Application {
        // a2.printGugudanFromTwoToNine();
        // a2.printTrinagleStars();
         B_while b = new B_while();
-        //b.testSimpleWhileStatement();
+        b.testSimpleWhileStatement();
         //b.testWhileExample1();
         //b.testWhileExample1();
         //b.testWhileExample3();
-        C_doWhile c = new C_doWhile();
+        //C_doWhile c = new C_doWhile();
         //c.testSimpleWhileStatement();
-        c.testDoWhileExample();
+        //c.testDoWhileExample();
     }
 
 }
