@@ -8,7 +8,7 @@ public class ProductController {
     Scanner sc = new Scanner(System.in);
     ProductDTO[] pro = new ProductDTO[10];
     int count = 0;
-
+    int num;
     public void mainManu(){
         do {
             System.out.println("===제품관리메뉴===");
@@ -20,12 +20,15 @@ public class ProductController {
 
             int num = sc.nextInt();
             sc.nextLine();
+            if(num == 1){
 
+            }
+            if (num == 2){
+
+            }
         }while (num != 9);
+        System.out.println("프로그램 종료");
 
-
-
-    }if(){
 
     }
 
