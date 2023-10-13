@@ -15,12 +15,14 @@ public class Person {
         this.weight = weight;
     }
 
-    public String Infomation() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", height=" + height +
-                ", weight=" + weight +
-                '}';
+
+    public String information() {
+        return
+                " name= " + name +
+                " age= " + age +
+                " height " + height +
+                " weight " + weight ;
     }
+
+
 }
