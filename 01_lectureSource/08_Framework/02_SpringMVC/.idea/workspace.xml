@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="486bab7f-a401-4816-aedf-108338f9bdbc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap01-life-cycle-lecture-source/src/main/java/com/ohgiraffers/section01/xml/LifeCycleTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap01-life-cycle-lecture-source/src/main/java/com/ohgiraffers/section02/annotation/LifeCycleTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap02-service-method-lecture-source/src/main/java/com/ohgiraffers/chap02/ServiceMethodTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap03-parameter-lecture-source/src/main/java/com/ohgiraffers/section01/queryString/QueryStringTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap03-parameter-lecture-source/src/main/java/com/ohgiraffers/section02/formdata/FormDataTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap04-request-lecture-source/src/main/groovy/com/ohgiraffers/section01/headers/RequestHeaderPrintServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap04-request-lecture-source/src/main/groovy/com/ohgiraffers/section02/server/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap05-response-lecture-source/src/main/java/com/ohgiraffers/section02/headers/ResponseHeaderPrintServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap05-response-lecture-source/src/main/java/com/ohgiraffers/section03/status/StatusCodeTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/ExecptionHandlerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/Show404ErrorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/Show500ErrorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap07-forWard-lecture-source/src/main/java/com/ohgiraffers/section01/forward/PrintLoginSuccessServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap07-forWard-lecture-source/src/main/java/com/ohgiraffers/section01/forward/ReceiveInformationServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap08-redirect-lecture-source/src/main/java/com/ohgiraffers/section01/othersite/OtherSiteRedirectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap08-redirect-lecture-source/src/main/java/com/ohgiraffers/section02/RedirectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap08-redirect-lecture-source/src/main/java/com/ohgiraffers/section02/otherservlet/otherServletRedirectTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap09-cookie-lecture-source/src/main/java/com/ohgiraffers/section01/cookie/CookieHandlerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap09-cookie-lecture-source/src/main/java/com/ohgiraffers/section01/cookie/RedirectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap10-session-lecture-source/src/main/java/com/ohgiraffers/section01/session/RedirectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap10-session-lecture-source/src/main/java/com/ohgiraffers/section01/session/SessionHandlerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap10-session-lecture-source/src/main/java/com/ohgiraffers/section02/delete/DeleteSessionDataServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section01/contextlistener/ContextListenerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section01/contextlistener/ContextListenerTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section01/sessionlistener/SessionListenerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section01/sessionlistener/SessionListenerTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section01/sessionlistener/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section03/requestlistener/RequestListenerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap12-listener-lecture-source/src/main/java/com/ohgiraffers/section03/requestlistener/RequestListenerTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/java/com/ohgiraffers/section01/common/UUIDFileRenamePolicy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/java/com/ohgiraffers/section01/cos/manyfilupload/CosManFileUploadServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/java/com/ohgiraffers/section01/cos/multifileupload/CosMultiFileUploadServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/java/com/ohgiraffers/section01/cos/singlefileupload/CosSingleFileUploadServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/java/com/ohgiraffers/section02/commonsio/CommonsFileUploadServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/java/com/ohgiraffers/section03/thumbnail/TransferToThumbnailImageServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-1feilter/chap13-file-io-lecture-source/src/main/resources/origin-image/mybatis.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-feilter-lecture-source/src/main/java/com/ohgiraffers/section01/filter/FirstFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-feilter-lecture-source/src/main/java/com/ohgiraffers/section01/filter/FirstFilterTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-feilter-lecture-source/src/main/java/com/ohgiraffers/section02/uses/EncodingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-feilter-lecture-source/src/main/java/com/ohgiraffers/section02/uses/PasswordEncryptFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-feilter-lecture-source/src/main/java/com/ohgiraffers/section02/uses/RegistMemberServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_Servlet/chap11-feilter-lecture-source/src/main/java/com/ohgiraffers/section02/uses/RequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/java/com/ohgiraffers/el/controller/TestFourServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/java/com/ohgiraffers/el/controller/TestOneServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/java/com/ohgiraffers/el/controller/TestTwoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/java/com/ohgiraffers/el/model/dto/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/action/common.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/action/testAction.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/action/testForward.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/el/testEL1.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/el/testEL2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/el/testEL3.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/el/testEL4.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap-02-el-jstl-lecture-source1/src/main/webapp/view/jstl/testJstlCore.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/java/com/ohgiraffers/menu/controller/MenuOrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/1_simpleJspStates.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/2_pageDirective.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/3_includeDirective.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/4_request.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/5_response.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/errorPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_JSP/chap01-jsp-lecture-source/src/main/webapp/jsp/today.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/common/MemberDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/common/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/section02/javaconfig/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/section02/javaconfig/ContextConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/section03/annotationconfig/subsection01/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/section03/annotationconfig/subsection01/ContextConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/java/com/ohgiraffers/section03/annotationconfig/subsection02/xml/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/resources/section01/xmlconfig/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap01-ioc-container/src/main/resources/section03/annotationconfig/subsection02/xml/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/java/com/ohgiraffers/common/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/java/com/ohgiraffers/common/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/java/com/ohgiraffers/common/PersnalAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/java/com/ohgiraffers/section01/xmlconfig/Appication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/java/com/ohgiraffers/section02/javaconfig/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/java/com/ohgiraffers/section02/javaconfig/ContextConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap02-dependency-injection/src/main/resources/section01/xmlconfig/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap04-bean/src/main/java/com/ohgiraffers/common/Beverage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap04-bean/src/main/java/com/ohgiraffers/common/Bread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap04-bean/src/main/java/com/ohgiraffers/common/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap04-bean/src/main/java/com/ohgiraffers/common/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap04-bean/src/main/java/com/ohgiraffers/section01/scope/subsection01/singleton/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/chap04-bean/src/main/java/com/ohgiraffers/section01/scope/subsection01/singleton/ContextConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/demo/src/main/java/com/example/demo/SampleTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/demo/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_Core/demo/src/main/resources/templates/ResultPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap01-request-mapping-lecture-source/src/main/java/com/ohgiraffers/requestmapping/ClassMappingTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap01-request-mapping-lecture-source/src/main/java/com/ohgiraffers/requestmapping/MethodMappingTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap01-request-mapping-lecture-source/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap01-request-mapping-lecture-source/src/main/resources/templates/mappingResult.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/java/com/ohgiraffers/handlermethod/FirstController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/java/com/ohgiraffers/handlermethod/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/resources/templates/first/messagePrinter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/resources/templates/first/modify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/resources/templates/first/regist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/resources/templates/first/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap02-handler-method-lecture-source/src/main/resources/templates/first/searchResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_MyBatis" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_MyBatis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_FrontEnd/99_demo/01_demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_FrontEnd/99_demo/02_demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_FrontEnd/99_demo/03_demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../03_jdbc/03_JDBC" beforeDir="false" afterPath="$PROJECT_DIR$/../../../03_jdbc/03_JDBC" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../goodday" beforeDir="false" afterPath="$PROJECT_DIR$/../../../goodday" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mybatispractice2/mybatisPractice2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mybatispractice2/mybatisPractice2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sajo1/mini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sajo1/mini" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2YjYxyeP6WVxwENwOqZ583P6qyM" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/dev/01_lectureSource/08_Framework/02_SpringMVC",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="486bab7f-a401-4816-aedf-108338f9bdbc" name="Changes" comment="" />
+      <created>1701040706004</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701040706004</updated>
+      <workItem from="1701040707099" duration="152000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

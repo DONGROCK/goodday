@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자우선순위</title>
+    <style>
+        .test1{
+            background: yellow !important;
+            color: black;
+        }
+        div {
+            width: 60px;
+            height: 60px;
+            background: violet !important;
+        }
+        #test2{
+            background: plum !important;
+            color: wheat ;
+        }
+        .test2{
+            background: blue !important;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>선택자 우선순위</h1>
+    <p>기본적으로 css속성은 위에서 부터 아래로 적용이 되지만, 
+        같은 태그에 여러 개의 css속성이 설정된 경우에는
+        우선순위에 따라 스타일이 적용된다..
+        이미지 URL 가져오기
+        컴퓨터에서 images.google.com으로 이동합니다.
+        이미지를 검색합니다.
+        이미지 검색결과에서 이미지를 클릭합니다.
+        오른쪽 패널에서 더보기 공유 를 클릭합니다.
+        '클릭하여 링크 복사'에서 URL을 클릭합니다.
+    </p>
+    <pre>
+        태그선택자 < 클래스 선택자 < 아이디 선택자 < 인라인 선택자 < !important
+         순서로 우선순위를 가진다.
+    </pre>
+    <hr>
+    <h2>선택자 우선순위 테스트</h2>
+    <div id="test1" class="test1">우선순위 테스트1</div>
+    <div id="test2" class="test2" style="background: gray;">우선순위 테스트2</div>
+    <br><br><br><br><br><br><br>
+    <a href="./index.html">메인페이지로</a>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #test2, #test3 {
+            width: 200px;
+            height: 200px;
+            background : lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트</h1>
+        <h3>이벤트 관련 속성</h3>
+        <p>이벤트 정보는 자바 스크립트 내장 객체인 event 객체를 통해<br>
+           확인이 가능하다.</p>
+        
+        <button onclick="test1(event);">실행 확인</button>
+        <script>
+            function test1(event){
+                console.log(event);
+            }
+        </script>
+
+<hr>
+
+        <h3>이벤트 연결 함수</h3>
+
+        <h4>bind() : 현재 존재하는 요소를 이벤트와 결합(연결)하는 함수<br>
+            unbind(): 현재 연결된 이벤트를 제거하는 함수</h4>
+        
+        <h1 id="test1">누르면 망가져요.</h1>
+<script>
+      // 이벤트 연결(바인딩)
+      $('#test1').bind('mouseenter',function(){
+                    $(this).css({
+                        "background" : "black",
+                        "color" : "white"
+                    });
+                }).bind('mouseleave', function(){
+                    $(this).css({
+                        "background" : "white",
+                        "color" : "black"
+                    });
+                });
+
+                // 이벤트 제거
+                $('#test1').bind('click',function(){
+                    $(this).unbind('mouseenter').unbind('mouseleave')
+                    .css({
+                       "background" : "palegreen",
+                       "color" : "navy"
+                    });
+                });
+
+</script>
+<hr>
+
+<h4>JQuery 3 버전부터 bind / unbind 는 on / off 메소드로 대체 되었다.<br>
+    on() : bind() 대신 이벤트 핸들러 및 이벤트를 바인딩하기 위한 함수<br>
+    off() : unbind()와 유사하게 on()으로 바인딩된 이벤트를 제거하는 함수
+</h4>
+
+<div id="test2">기본 상태</div>
+
+<script>
+    $(function(){
+        // $('#test2').on('mouseenter',function(){ . . . });
+        $('#test2').on({
+            'mouseenter' : function(){
+                $(this).css("background", "tomato").text("마우스 올라감");
+            }, 'mouseleave' : function(){
+                $(this).css("background", "yellow").text("마우스 떠남");
+            }, 'click' : function(){
+                $(this).off('mouseenter').off('mouseleave')
+                .css("background", "lightgreen").text("기본값으로 변경됨");
+            }
+        });
+    });
+</script>
+<br>
+
+<div id="test3">기본 상태</div>
+<script>
+    $(function(){
+        $('#test3').on('click', 
+                    {name : "홍길동", age : 20, hobby : "soccer"}, 
+                    function(event){
+                        alert(event.data.name + '님 환영합니다. \n'
+                            + event.data.age + ", "
+                            + event.data.hobby);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <h1>객체 삽입 관련 메소드(객체 생성 및 제거)</h1>
+
+    <h3>삽입 메소드 part1</h3>
+    <p>
+        $(A).appendTo(B) : A를 B 요소 안의 마지막 부분에 추가<br>
+        $(A).prependTo(B) : A를 B 요소 안의 앞 부분에 추가<br>
+        $(A).insertAfter(B) : A를 B 요소 뒤에 추가 <br>
+        $(A).insertBefore(B) : A를 B 요소 앞에 추가
+    </p>
+
+    <h1 id="test1"><label>|기준|</label></h1>
+    <h1 id="test2"><label>|기준|</label></h1>
+    <h1 id="test3"><label>|기준|</label></h1>
+    <h1 id="test4"><label>|기준|</label></h1>
+
+    <script>
+        $(function(){
+            let interval = setInterval(function(){
+                $("<label> appendTo() </label>").appendTo($('#test1'));
+                $("<label> prependTo() </label>").prependTo($('#test2'));
+                $("<label> insertAfter() </label>").insertAfter($('#test3'));
+                $("<label> insertBefore() </label>").insertBefore($('#test4'));
+
+                setTimeout(function(){
+                    clearInterval(interval);
+                }, 5000);
+            }, 1000);
+        });
+    </script>
+
+<hr>
+
+<h3>삽입 메소드 part 2</h3>
+<p>
+    $(A).append(B) : B를 A요소 안의 마지막 부분에 추가<br>
+    $(A).prepend(B) : B를 A요소 안의 앞 부분에 추가<br>
+    $(A).after(B) : B를 A요소 뒤에 추가 <br>
+    $(A).before(B) : B를 A요소 앞에 추가
+</p>
+
+<h1 id="test5"><label>과일 상자 : </label></h1>
+<h1 id="test6"><label>과일 상자 : </label></h1>
+<h1 id="test7"><label>과일 상자 : </label></h1>
+<h1 id="test8"><label>과일 상자 : </label></h1>
+
+<script>
+    $(function(){
+        let delim = ", "
+        let arr1 = ["포도", "사과", "파인애플", "오렌지", "딸기"];
+        let arr2 = ["복숭아", "수박", "메론", "망고"];
+
+        let cnt = 0;
+
+        let interval = setInterval(function(){
+            $('#test5').append("<label>" + arr1[cnt] + delim + "</label>");
+            $('#test6').prepend("<label>" + arr2[cnt] + delim + "</label>");
+            $('#test7').after("<label>" + arr1[cnt] + delim + "</label>");
+            $('#test8').before("<label>" + arr2[cnt] + delim + "</label>");
+
+            cnt++;
+
+            setTimeout(function(){
+                clearInterval(interval);
+            }, 3000);
+        }, 1000);
+    });
+</script>
+
+<hr>
+
+<h3>객체의 복사와 제거 메소드</h3>
+<p>clone() : 지정한 객체(요소)를 복사할 때 사용한다.<br>
+   remove() / detach() / empty() : 
+   객체(요소)를 제거하거나 내용을 비울 때 사용한다. </p>
+
+<div id="cloneTest">
+    <div class="item" id="item1">
+        <button class="copy">복사하기</button>
+        <button class="delete">삭제하기</button>
+    </div>
+
+    <div class="item" id="item2">
+        <button class="copy">복사하기</button>
+        <button class="delete">삭제하기</button>
+    </div>
+    
+    <div class="item" id="item3">
+        <button class="copy">복사하기</button>
+        <button class="delete">삭제하기</button>
+    </div>
+
+</div>
+
+<div id="result"></div>
+
+<script>
+    let p;
+                $('.copy').click(function(){
+                    // clone() : 요소의 틀만 복사 (이벤트 정보나 데이터는 복사되지 않는다.)
+                    // clone(boolean[true]) : 요소의 전 내용을 복사(이벤트 포함)
+                    $(this).parent().clone(true).appendTo($('#result'));
+
+                    if(p){
+                        p.appendTo($('#result'));
+                        p = null;
+                    }else{
+                        p = $(this ).parent().detach();
+                    }
+                });
+                $('.delete').click(function(){
+
+                    // $(this).parent().remove();
+                
+                    p = $(this).parent().detach();
+                    
+                    // 내부가 비워지고, 틀은 제거되지 않는다.
+                    // $(this).parent().empty();
+                });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json String</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<h1>ajax 요청 후 json응답(simple json string)</h1>
+
+<h2>JSON 데이터 요청</h2>
+
+<h3>1. 데이터 전송 없이 json반호나</h3>
+<button id="send-get-1">전송</button>
+<script>
+    $("#send-get-1").click(function (){
+       $.ajax({
+         url: "/receive/json",
+         type: "GET",
+         success: function (data){
+             console.log(data);
+             /*
+             * json형태의 문자열을 Object 타입의 객체로 파싱할 때 사용하는 메소드
+             */
+             let jsonObject = JSON.parse(data);
+             console.table(jsonObject);
+
+         },
+         error: function (error){
+             console.log(error);
+         }
+
+       });
+    });
+</script>
+
+<h3>2. 데이터 전송 없이 jsonArray 반호나</h3>
+<button id="send-get-2">전송</button>
+<script>
+    $("#send-get-2").click(function (){
+       $.ajax({
+           url: "receive/array",
+           type: "get",
+           success: function (data){
+               console.log(data);
+
+               let jsonObject = JSON.parse(data);
+
+               console.log(jsonObject);
+
+           },
+           error: function (error){
+               console.log(error);
+           }
+       });
+    });
+</script>
+
+<h3>3. 데이터 전송 없이 응답 헤더 설정 후 jsonArray 반호나</h3>
+<button id="send-get-3">전송</button>
+<script>
+    $("#send-get-3").click(function (){
+        $.ajax({
+            url: "receive/jsonarray",
+            type: "get",
+            success: function (data){
+                console.log(data);
+
+                // let jsonObject = JSON.parse(data);
+                //
+                // console.log(jsonObject);
+
+            },
+            error: function (error){
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

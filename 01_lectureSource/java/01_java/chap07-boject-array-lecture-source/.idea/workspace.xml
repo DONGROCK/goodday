@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83dce236-43d0-48ff-9a6b-bd76187af013" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../chap09_inherit_prectice-question/src/main/java/com/hw1/model/dto/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap09_inherit_prectice-question/src/main/java/com/hw1/model/dto/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap09_inherit_prectice-question/src/main/java/com/hw1/model/dto/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap09_inherit_prectice-question/src/main/java/com/hw1/run/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap09-polymorphism-lecture-source/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap09-polymorphism-lecture-source/.idea/gradle.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2WY9FVqPa608aqa8KiueSLSKvIO" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/dev/goodday/00_java/chap07-boject-array-lecture-source",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ohgiraffers.section02.uses" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.ohgiraffers.section02.uses.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.init.Application" />
+      <module name="chap07-boject-array-lecture-source.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section01.init.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ohgiraffers.section02.uses.Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section02.uses.Application" />
+      <module name="chap07-boject-array-lecture-source.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section02.uses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.ohgiraffers.section02.uses.Application" />
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83dce236-43d0-48ff-9a6b-bd76187af013" name="Changes" comment="" />
+      <created>1696898546541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696898546541</updated>
+      <workItem from="1696898547489" duration="7263000" />
+      <workItem from="1696928316237" duration="684000" />
+      <workItem from="1696934565188" duration="122000" />
+      <workItem from="1696983571604" duration="104000" />
+      <workItem from="1696984366032" duration="19000" />
+      <workItem from="1697187662901" duration="18000" />
+      <workItem from="1697187714662" duration="412000" />
+      <workItem from="1697188155413" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,23 @@
+### helloworld 문자열 반환
+GET http://localhost:8001/response/hello
+
+###랜덤숫자 응답
+GET http://localhost:8001/response/random
+
+###Object 응답
+GET http://localhost:8001/response/message
+
+###List 응답
+GET http://localhost:8001/response/list
+
+###Map 응답
+GET http://localhost:8001/response/map
+
+###ImageFile 응답
+GET http://localhost:8001/response/image
+
+###ResponseEntity 응답
+GET http://localhost:8001/response/entity
+
+###headers 응답
+GET http://localhost:8001/entity/users

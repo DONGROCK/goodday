@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>필터링 메서드 사용법</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <h1>필터링 메소드</h1>
+    <h3>필터링 메소드 사용법</h3>
+    <p>
+        javascript에서 기본적으로 지원하지 않는<br>
+        filter()메소드를 활용할 필요가 있을 경우 사용한다.
+    </p>
+
+    <h4 class="test">test-1</h4>
+    <h4 class="test">test-2</h4>
+    <h4 class="test">test-3</h4>
+    <h4 class="test">test-4</h4>
+    <h4>test-5</h4>
+    <h4 class="test">test-6</h4>
+
+    <script>
+        $(function(){
+            $('h4:even').css({ //even : 짝수, odd : 홀수
+                "background" : "black",
+                "color" : "snow"
+            });
+
+            // filter() 사용하기
+            $('h4').filter(':even').css({
+                "background" : "orange",
+                "color" : "black"
+            });
+
+            // 함수를 매개변수로 하는 filter() 사용하기
+            $('h4').filter(function(index){
+                console.log(index);
+                return index % 2 == 1;
+
+            }).css({
+                "background" : "purple",
+                "color" : "lightskyblue"
+            });
+
+            // 선택된 요소의 첫번째 요소 가져오기
+            $('h4').first().css("font-size", "20pt");
+
+            // 선택된 요소의 마지막 요소 가져오기
+            $('h4').last().css("font-size", "25pt");
+
+            // 특정 인덱스 번호와 일치하는 요소 가져오기
+            $('h4').eq(3).text("eq()에 의해서 선택되었습니다!");
+
+            // 인자 값과 일치하지 않는 요소 선택하기
+            $('h4').not('.test').css({
+                "background" : "orange",
+                "color" : "red"
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>file upload</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h1>ajax 파일 업로드</h1>
+<h3>formdata 를 이용한 파일 업로드</h3>
+<input type="file" id="file"><br>
+<input type="text" id="description"><br>
+<input type="button" value="전송" id="send-file-1">
+
+<script>
+    $("#send-file-1").click(function (){
+        const formData = new FormData(); /*전송할 form객체 생성*/
+
+        formData.append("file", $('#file')[0].files[0]); /*내가 추가한 파일 객체를 찾아서 담을 수 있따.*/
+        formData.append("description", $(#description).val());
+
+        console.log(formData.get("file"));
+        console.log(formData.get("description"));
+
+        $.ajax({
+            url: "/upload/formdata",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false, /*기본값 true data 속성의 값이 콘텐츠 타입에 맞도록 쿼리 문자열로 처리된다.*/
+            success: function (data){
+                alert(data);
+            },
+
+            error: function (error){
+                alert(error);
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

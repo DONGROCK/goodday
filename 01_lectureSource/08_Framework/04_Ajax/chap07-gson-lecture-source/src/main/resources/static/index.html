@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gson</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<h1>ajax 요청 후에 json 응답(gson library 사용)</h1>
+<h3>1. 데이터 전송 없이 json반환</h3>
+<button id="send-get-1">전송</button>
+<script>
+    $("#send-get-1").click(function (){
+        $.ajax({
+            url: "gson/test1",
+            type: "get",
+            success: function (data){
+                console.log(data);
+            },
+            error: function (error){
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+<h3>2. 기본 자료형 데이터 전송 후 json 반환</h3>
+memberCode : <input type="text" id="memberCode2"><br>
+firstName : <input type="text" id="firstName2"><br>
+lastName : <input type="text" id="lastName2"><br>
+age : <input type="text" id="age2"><br>
+enrollDate : <input type="date" id="enrollDate2"><br>
+<button id="send-get-2">전송</button>
+
+<script>
+    $("#send-get-2").click(function (){
+        const memberCode = $("#memberCode2").val();
+        const firstName = $("#firstName2").val();
+        const lastName = $("#lastName2").val();
+        const age = parseInt($("#age2").val());
+        const enrollDate = $("#enrollDate2").val();
+
+        $.ajax({
+            url: "gson/test2",
+            type: "GET",
+            data: {
+                memberCode: memberCode,
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                enrollDate: enrollDate
+            },
+            success: function (data){
+                console.table(data);
+            },
+            error: function (error){
+                console.log(error);
+            }
+        });
+    });
+</script>
+<h3>3. Object 타입의 데이터 전송 후 json 반환</h3>
+memberCode : <input type="text" id="memberCode3"><br>
+firstName : <input type="text" id="firstName3"><br>
+lastName : <input type="text" id="lastName3"><br>
+age : <input type="text" id="age3"><br>
+enrollDate : <input type="date" id="enrollDate3"><br>
+<button id="send-get-3">전송</button>
+<script>
+    $("#send-get-3").click(function (){
+        const memberCode = $("#memberCode3").val();
+        const firstName = $("#firstName3").val();
+        const lastName = $("#lastName3").val();
+        const age = parseInt($("#age3").val());
+        const enrollDate = $("#enrollDate3").val();
+
+        const member = {
+            memberCode, firstName, lastName, age, enrollDate
+        }
+
+        $.ajax({
+            url: "gson/test3",
+            type: "GET",
+            data: member
+            ,
+            success: function (data){
+                console.table(data);
+            },
+            error: function (error){
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+<h3>4. Object 타입의 데이터 전송 후 json 반환</h3>
+memberCode : <input type="text" id="memberCode4"><br>
+firstName : <input type="text" id="firstName4"><br>
+lastName : <input type="text" id="lastName4"><br>
+age : <input type="text" id="age4"><br>
+enrollDate : <input type="date" id="enrollDate4"><br>
+<button id="send-get-4">전송</button>
+<script>
+    $("#send-get-4").click(function (){
+        const memberCode = $("#memberCode4").val();
+        const firstName = $("#firstName4").val();
+        const lastName = $("#lastName4").val();
+        const age = parseInt($("#age4").val());
+        const enrollDate = $("#enrollDate4").val();
+
+        const member = {
+            memberCode, firstName, lastName, age, enrollDate
+        }
+
+        //json문자열 -> json Object : JSON.parse()
+        //자바스크립트Object -> json문자열 : JSON.stringify()
+
+        const jsonString = JSON.stringify(member); //
+
+        $.ajax({
+            url: "gson/test4",
+            type: "GET",
+            data: { jsonString }
+            ,
+            success: function (data){
+                console.table(data);
+            },
+            error: function (error){
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

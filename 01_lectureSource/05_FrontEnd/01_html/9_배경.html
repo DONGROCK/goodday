@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bg-img{
+            width: 70%;
+            height: 1800px;
+            border: 4px solid red;
+            background-image: url(gif/ooot.gif);
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+            background-size: contain;
+            background-size: auto;
+
+
+            background-attachment: fixed ;
+            background-attachment: scroll ;
+
+            background-position: 50% 50% ;
+            background-position: 30px 50px ;
+            background-position: right ;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>배경색과 배경 이미지</h1>
+    <pre>body{background-color:색상명 | rgb | rgba | hsl | hsla | 16진수;}로 배경색을 지정할 수 있다.</pre>
+    <a href="http://www.w3schools.com/colors/colors_names.asp" target="_blank">
+        색상명 참조 사이트로 이동</a>
+    
+    <hr>
+    <h3>div배경 테스트</h3>
+    <pre>div 영역을 설정하는 경우 배경색을 지정하기 위해서는 div에 배경 색을 별도로 지정해야 한다.
+    </pre>
+    <div id="div-bg">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </div>
+
+    <h3>배경 적용 범위 조정</h3>
+    <pre>div 영역의 배경 적용 범위를 지정할 때 background-clip 속성을 사용한다.</pre>
+    <!--div.div-test#div$*3-->
+    <div class="div-test" id="div1">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </div>
+    <div class="div-test" id="div2">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </div>
+    <div class="div-test" id="div3">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </div>
+
+    <div id="bg-img">
+
+    </div>
+
+    <br><br><br><br><br><br>
+    <a href="index.html">메인페이지로 궈궈</a>
+</body>
+</html>

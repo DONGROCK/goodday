@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순회탐색 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        div[class*=wrap] *{
+            border : 1px solid lightgray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>순회 탐색 메소드</h1>
+    <h3>조상 선택 (Ancestors) 메소드</h3>
+    <p>현재 선택된 요소의 상위(조상) 요소들을 선택하는 메소드</p>
+
+    <div class="wrap1">
+        <div style="width:500px;"> div (great-grandparent)
+            <ul> ul (grandparent)
+                <li> li (parent)
+                    <span>
+                        span
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;"> div (grandparent)
+            <p> p (parent)
+                <span>
+                    span
+                </span>
+            </p>
+        </div>
+    </div>
+
+<script>
+                    // 선택한 요소의 바로 위의(상위) 요소 선택하기
+                $('span:eq(0)').parent()
+                .css({
+                    "color" : "red",
+                    "border" : "2px solid red"
+                });
+
+                        // 선택한 요소의 모든 상위 요소를 리턴
+                        $('span:eq(0)').parents('ul')
+                .css({
+                    "color" : "blue",
+                    "border" : "2px solid blue"
+                });
+
+                $('span:eq(1)').parentsUntil("div")
+                .css({
+                    "color" : "yellowgreen",
+                    "border" : "2px solid yellowgreen"
+                });
+</script>
+
+<hr>
+
+<h3>후손 요소 (Descendants) 선택 메소드</h3>
+<p>선택한 요소의 하위(후손) 요소들을 선택하는 메소드</p>
+
+<div class="wrap2">
+    <div style="width:500px;"> div (great-grandparent)
+        <ul> ul (grandparent)
+            <li> li (parent)
+                <span>
+                    span
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;"> div (grandparent)
+        <p> p (parent)
+            <span>
+                span
+            </span>
+        </p>
+    </div>
+</div>
+<script>
+
+$('.wrap2').children()
+            .css({
+                "color" : "blue",
+                "border" : "2px solid blue"
+            });
+            $('.wrap').children().children('ul');
+            // .css({
+            //     "color : yellowgreem",
+            //     "border" : "2px solid blue"
+            // });
+
+</script>
+
+<h3>후손 요소 (Descendants) 선택 메소드</h3>
+<p>선택한 요소의 하위(후손) 요소들을 선택하는 메소드</p>
+
+<div class="wrap2">
+    <div style="width:500px;"> div (great-grandparent)
+        <ul> ul (grandparent)
+            <li> li (parent)
+                <span>
+                    span
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;"> div (grandparent)
+        <p> p (parent)
+            <span>
+                span
+            </span>
+        </p>
+    </div>
+</div>
+<script>
+
+</script>
+
+<hr>
+
+        <h3>인접한 형제(Sibling / Sideways) 요소 선택하기</h3>
+        <p>선택한 요소의 형제 요소들을 선택하는 메소드</p>
+
+        <div class="wrap3" style="border : 2px solid lightgray;">
+            div (parent)
+
+            <p> p 입니다.</p>
+            <span> span 입니다.</span>
+            <h2> h2 입니다. </h2>
+            <h3> h3 입니다.</h3>
+            <p> 또 다른 p 입니다.</p>
+
+        </div>
+<script>
+                    // 선택한 요소의 형제(같은 레벨) 요소를 리턴
+                    $('h2').siblings().css({
+                    "color" : "red",
+                    "border" : "2px solid red"
+                });
+
+                // 특정 형제 요소를 선택하고자 할 경우 
+                // siblings()에 매개인자를 작성한다.
+                $('h2').siblings('p').css({
+                    "color" : "orange",
+                    "border" : "2px solid orange"
+                });
+
+                // 2. 현재 선택한 요소의 앞에 있는 형제들 선택하기
+                
+                // 현재 선택한 요소의 바로 앞의 요소 한 개를 리턴한다.
+                $('h2').prev().css("background", "yellow");
+               // 현재 선택한 요소의 앞에 있는 모든 요소 선택하기
+                $('h2').prevAll().css("background", "cyan");
+
+                // 현재 선택한 요소부터 특정 요소 전까지의 범위 선택하기
+                $('h2').prevUntil("p").css("border", "dashed");
+                
+// 3. 현재 선택한 요소의 뒤에 있는 형제들 선택하기
+// 현재 선택한 요소 바로 뒤의 요소 리턴
+$('h2').next().css({
+    "color" : "blue",
+    "border" : "2px solid blue"
+});
+// 현재 선택한 요소 뒤의 모든 요소 선택하기
+$('h2').nextAll().css("background", "beige");
+// 현재 선택한 요소부터 특정 요소 전까지의 범위 선택하기
+$('h2').nextUntil('p').css("border", "dotted");
+</script>
+</body>
+</html>

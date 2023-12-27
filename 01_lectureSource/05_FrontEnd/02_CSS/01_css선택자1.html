@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css선택자</title>
+    <style>
+        /*css 주석 (//와 같은 단일행 주석도 적용 안됨)*/
+        /*모든 선택지는 '*'기호를 사용한다.
+        스타일 적용
+        대상(태그, 선택자){속성: 속성값}*/
+        *{color : palegreen;}
+        
+        /*태그 선택자 테스트*/
+        p {color : red} 
+        li {color : blue;}
+        /*아이디 선택자 테스트*/
+        #id2 {background-color: yellow; color: black;}
+        
+        /*클래스 선택자 테스트*/
+        .class1{background-color: goldenrod; color: black ;}
+        .class2{background-color: black; color: aliceblue;}
+    </style>
+</head>
+<body>
+    <h1>CSS 기본 선택자</h1>
+    <p>선택자(selector)란?<br>
+    특정한 HTML 태그를 선택할 때 사용하는 기능으로, 태그를 선택하여 원하는 스타일과 기능을 적용할 수 있다.
+    </p>
+    <hr>
+    <h2>모든 선택자</h2>
+    <p>
+        html 문서 안의 모든 태그를 선택할 때 전체 선택자를 사용할 수 있다.
+    </p>
+    <ul>
+        <li>테스트1</li>
+        <li>테스트2</li>
+        <li>테스트3</li>
+    </ul>
+
+    <hr>
+    <h2>태그선택자</h2>
+    <p>HTML 문서 내에 같은 태그를 모두 선택할 때 사용한다.</p>
+    <p>p{color : red;} 와 같은 형태로 사용된다.</p>
+
+    <hr>
+    <h2>아이디 선택자</h2>
+    <p>HTML 문서 내에 해당하는 아이디 속성의 값을 가진 태그만 선택할 때 사용한다.</p>
+    <p> #아이디명 {color : orange;}와 같은 형태로 사용된다.</p>
+    <ol>
+        <li id="id1">아이디 선택자 테스트1</li>
+        <li id="id2">아이디 선택자 테스트2</li>
+        <li id="id3">아이디 선택자 테스트3</li>
+        <li id="id4">아이디 선택자 테스트4</li>
+        <li id="id5">아이디 선택자 테스트5</li>
+    </ol>
+    <hr>
+    <h2>현강이형 어제 6시간 잤다고 너무 좋다고 그러더니 와서 코고는거 뭐야클래스 선택자</h2>
+    <p>HTML 문서 내에 여러 개의 태그를 동일한 클래스명으로 지정하여 선택할 때 사용한다.</p>
+    <p>.클래스명 {color : purple;} 과 같은 형태로 사용된다.</p>
+    <ul>
+        <li class="class1" id="id2">클래스 선택자 테스트1</li>
+        <li class="class2">클래스 선택자 테스트2</li>
+        <li class="class1">클래스 선택자 테스트3</li>
+        <li class="class2">클래스 선택자 테스트4</li>
+        <li class="class1">클래스 선택자 테스트5</li>
+    </ul> 
+    <hr>
+    <br>
+    <button>버튼</button>
+
+    <!-- script태그안에서는 javascript코드를 작성할 수 있따.-->
+    <script>
+        let btn = document.querySelector('button');
+
+        btn.onclick = () => {
+            let testli = document.querySelectorAll("ul>li.class2");
+
+            for(let li = 0; li < testli.length; li++){
+                testli[li].style.backgroundColor = "red";
+            }
+            window.onload = function(){
+                let idTag = document.getElementById('id');
+                console.log(idTag);
+            }
+        }
+    </script>
+
+    <br><br><br><br><br><br><br>
+
+    <a href="./index.html">메인페이지로 돌아가깃</a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_use-class</title>
+</head>
+<body>
+    <h1>03. class를 이용한 요소 노드 취득</h1>
+    <pre>
+        <b>
+            Document.prototype/Element.prototype.getElementsByClassName 메서드는
+            인수로 전달한 class 어트리뷰트 값을갖는 모든 요소들을 탐색하여 반환한다.
+        </b>
+        메서드 이름의 Elements 가 복수형인 것에서 알 수 있듯 여러 개의 요소 노드 객체를
+        갖는 DOM컬렉션 객체인 HTMLCollection객체를 반환한다.
+    </pre>
+    <ul id="available">
+        <li class="drink coffee">커피</li>
+        <li class="drink coke">콜라</li>
+        <li class="drink milk">우유</li>
+    </ul>
+    <ul id="unavaliable">
+        <li class="drink soju">소주</li>
+        <li class="drink beer">맥주</li>
+    </ul>
+    <script>
+        //DOM전체에서 class값이 drink인 요소노드를 모두 탐색하여 반환
+        const $drinks = document.getElementsByClassName('drink');
+        console.log($drinks); //HTMLCollection 유사 객체 배열, 이터러블
+        console.log($drinks.length);
+
+        Array.from($drinks).forEach(drink => drink.style.color = 'red');
+        
+        //DOM전체에서 class값이 drink coffee 인 요소노드를 모두 탐색하여 반환
+        const $coffee = document.getElementsByClassName('drink coffee');
+        console.log($coffee);
+
+        const $available = document.getElementById('available');
+        const $availableDrinks = $available.getElementsByClassName('drink');
+        console.log($availableDrinks);
+
+        const $noElem = $available.getElementsByClassName('soju');
+        console.log($noElem);
+        
+        
+        
+    </script>
+</body>
+</html>

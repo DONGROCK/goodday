@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 양식 필터 선택자</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <h1>입력 양식 필터 선택자</h1>
+    <h3>Checkbox 상태 관련 선택자</h3>
+    운동 :
+    <input type="checkbox" name="sports" id="soccer" value="축구"> 축구
+    <input type="checkbox" name="sports" id="basketball" value="농구"> 농구
+    <input type="checkbox" name="sports" id="baseball" value="야구"> 야구
+
+    <script>
+        //change : 값이 변경되었을 때 시점을 감지하여 동작하는 이벤트
+
+        $('inputcheckbox').change(changeSports);
+
+        // 여기서 this는 체크된 것들
+        function changeSports(){
+            console.log($(this).prop("checked"));
+            
+            if($(this).prop("checked")){
+                    $(this).css({
+                        "width" : "50px",
+                        "height" : "50px"
+                    });
+                } else {
+                    $(this).css({
+                        "width" : "15px",
+                        "height" : "15px"
+                    });
+                }
+
+        }
+    </script>
+
+<h3>select 와 option 태그의 상태에 대한 선택자</h3>
+<select id="nation">
+        <option value="한국">한국</option>
+        <option value="중국">중국</option>
+        <option value="미국">미국</option>
+        <option value="태국">태국</option>
+        <option value="영국">영국</option>
+        <option value="남아프리카공화국">남아프리카공화국</option>
+</select> <br>
+선택한 국가 : <input type="text" id="result">
+
+<script>
+    $('#nation').change(selectNation);
+
+    function selectNation(){
+        //val()메서드는 선택된 엘리먼트요소의 value의 속성값을가져올때 사용
+        //val(값) 으로 사용하면 등록한 값으로 수정할 때 사용(setter)
+        let value = $('option:selected').val();
+        console.log(value);
+        
+        $('#result').val(value + "을 선택하셨습니다.");
+    }
+</script>
+
+<hr>
+
+<h3>input 상태에 따른 선택자</h3>
+활성화된 택스트 상자 : <input type="text"> <br>
+비활성화된 텍스트 상자 : <input type="text" disabled> <br>
+활성화된 버튼 : <input type="button" value="활성화"> <br>
+비활성화된 버튼 : <input type="button" disabled value="비활성화"> <br>
+
+<script>
+    $('input:enabled').css('background', 'lightgreen');
+    $('input:disabled').css('background','tomato');
+</script>
+
+</body>
+</html>

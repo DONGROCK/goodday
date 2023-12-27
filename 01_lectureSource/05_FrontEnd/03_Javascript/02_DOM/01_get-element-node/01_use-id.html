@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_use-id</title>
+
+    <style>
+        .area{
+        width: 100px;
+        height: 100px;
+        border: 1px solid lightblue;
+    }
+    </style>
+</head>
+<body>
+    <h1>01. id를 이용한 요소 노드 취득</h1>
+
+    <pre>
+        <b>
+            Document.prototype.getElementById메서드는
+             인수로 전달한 id어트리뷰트 값을 갖는 
+             하나의 요소 노드를 탐색하여 반환한다.
+        </b>
+        문서 내에 중복된 id값을 갖는 HTML요소가 
+        여러 개 존재하더라도 에러가 발생하지는 않지만
+         해당 id값을 갖는 첫 번째 요소 노드만 반환한다.
+    </pre>
+
+    <div id="area1" class="area">
+        div 영역
+        <p id="area2">p영역</p>
+    </div>
+    <div id="area1" class="area">
+        div 영역
+    </div>
+    <script>
+        // 요소 노드 취득
+        //여기서 $sms tag요소를 변수담는다.
+        const $elem = document.getElementById('area1') //document전체를 영역잡는다.
+            // id값과 동일한 이름의 전역변수가 있을 경우 이름 충돌이 있어 지양하는 것이 좋다.
+            $elem.style.background = 'skyblue';
+            //id로 찾아서 속성값을 넣는건 딱 하나만 적용
+            // let area2 = 10; //아이디랑 중복되지 않게 
+            //id 속성 값을 그대로 딴 전역 변수를 이용한 접근도 가능하다.
+            area2.style.background = 'blue';
+
+            const $noElem = document.getElementById('area3'); //없는건 null
+            console.log($noElem);
+            
+    </script>
+</body>
+</html>

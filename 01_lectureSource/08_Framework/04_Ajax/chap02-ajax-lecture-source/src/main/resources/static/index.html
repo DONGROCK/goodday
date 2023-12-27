@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<h1>jquery ajax</h1>
+<h3>개용</h3>
+<p>제이쿼리를 이용하면 브라우저 호환성을 고려하지 않고 편리하게 ajax를 사용할 수 있다.</p>
+<h3>simple string ajax</h3>
+<input type="text" name="name" id="param">
+<button id="sendServer">서버로 전ㅅ</button>
+<br>
+<p id="result"></p>
+
+<script>
+    $('#sendServer').click(function (){
+        const name = $('#param').val();
+
+        /*제이쿼리 ajax를 이용해서 코드작성*/
+        $.ajax({
+            url: "jQuery",
+            method: "GET",
+            data: {name : name},
+            success: function (data, textStauts, xhr){/*비동기 요청이 성공했을 시*/
+                $("#result").text(data);
+                console.log(textStauts);
+                console.log(xhr);
+            },
+            error: function (xhr, status, error){
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
+            }
+        });
+    })
+
+</script>
+</body>
+</html>
