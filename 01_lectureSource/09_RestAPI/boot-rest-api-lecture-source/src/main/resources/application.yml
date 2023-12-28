@@ -1,2 +1,7 @@
 server:
   port: 8001
+
+springdoc:
+  packages-to-scan: com.ohgiraffers.api.section04
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8

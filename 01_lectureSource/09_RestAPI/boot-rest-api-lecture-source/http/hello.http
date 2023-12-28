@@ -21,3 +21,47 @@ GET http://localhost:8001/response/entity
 
 ###headers 응답
 GET http://localhost:8001/entity/users
+
+### pathvariable 사용
+GET http://localhost:8001/entity/users/1
+
+###신규 회원 등록
+POST http://localhost:8001/entity/users
+Content-Type: application/json
+
+{
+  "id": "user004",
+  "pw": "pass004",
+  "name": "강감찬",
+  "enrollDate": "2023-12-28"
+}
+
+### 4번 회원 조회
+GET http://localhost:8001/entity/users/4
+
+### 4번 회원 정보 수정
+PUT http://localhost:8001/entity/users/4
+Content-Type: application/json
+
+{
+  "id": "user004",
+  "pw": "pass004",
+  "name": "강강감감찬찬",
+  "enrollDate": "2023-12-28"
+}
+
+###4번 회원 정보 삭제
+DELETE http://localhost:8001/entity/users/4
+
+###valid 예외 확인
+GET http://localhost:8001/valid/users/1
+
+###회원 등록 Valid 테스트
+POST http://localhost:8001/valid/users
+Content-Type: application/json
+
+{
+  "pw": "pass01",
+  "name": "name01",
+  "enrollDate": "2022-03-21"
+}
