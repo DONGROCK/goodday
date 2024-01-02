@@ -32,9 +32,15 @@ public class A_EntityLifeCycleTests {
     *
     * 영속 : 비영속 상태가 영속성 컨텍스트에 들어간 상태
     *
-    * 준영속 :
+    * 준영속 : 영속상태에서 벗어난다. (context에서 뺀다.)엔티티는 여전히 존재하지만 더 이상 JPA의 관리를 받지 않음.
     *
-    * 삭제 :
+    * 삭제 : 엔티티가 영속성 컨텍스트에서 관리되고 있으나, 트랜잭션이 커밋되는 시점에 데이터베이스에서 삭제될 것으로 표시된 상태.
+    *  이 상태로 변경되면, 엔티티는 더 이상 데이터베이스에 반영되지 않으며, 영속성 컨텍스트와 데이터베이스에서 모두 제거될 예정임.
+    *
+    * 준영속과 삭제의 차이
+    *  이 두 상태는 엔티티의 생명주기를 관리하는 중요한 부분입니다.
+    *  준영속 상태는 엔티티를 일시적으로 관리에서 제외하려고 할 때,삭제 상태는
+    *  엔티티를 데이터베이스에서 영구적으로 제거하려고 할 때 사용됩니다.
     * */
 
     @DisplayName("비영속 테스트")
@@ -42,18 +48,25 @@ public class A_EntityLifeCycleTests {
     public void nonpersistenceTest(){
 
         //given
+        //PK가 11인 Menu엔티티를 조회한다. 그러면 Menu 엔티티에서 @ID를 확인해봐야함. 기준이 뭘지
         //                                  리턴받을 타입
         Menu foundMenu = entityManager.find(Menu.class, 11);// 영속상태 //주소값이 들어감
 
+        //newMenu를 통해 Menu객체 생성
         Menu newMenu = new Menu(); //비영속상태 : 객체만 생성하면 영속성 컨텍스트나 데이터베이스와 관련없다.
+        //조회된 foundMenu의 각 필드 값을 새로 생성된 newMenu 객체에 복사. 단순히 값만 복사
+        //newMenu는 여전히 비영속 상태
         newMenu.setMenuCode(foundMenu.getMenuCode());
         newMenu.setMenuName(foundMenu.getMenuName());
         newMenu.setMenuPrice(foundMenu.getMenuPrice());
         newMenu.setCategoryCode(foundMenu.getCategoryCode());
         newMenu.setOrderableStatus(foundMenu.getOrderableStatus());
         //when
+        //주소값이 같은지? 비교
         boolean isTrue = (foundMenu == newMenu);
         //then
+        //foundMenu와 newMenu가 서로 다른 객체임을 확인함으로써,
+        // 영속 상태의 엔티티와 비영속 상태의 엔티티가 서로 다르다는 것을 보여주기 위한 것입니다.
         Assertions.assertFalse(isTrue);
     }
 

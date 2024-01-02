@@ -1,32 +1,23 @@
-package com.ohgiraffers.section01.entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+package com.ohgiraffers.section04.enumtype;
+import jakarta.persistence.*;
 
 import java.util.Date;
-
 /*
-    * @Entity 어노테이션은 JPA에서 사용되는 엔티티 클래스임을 표시한다.
-    * 해당 어노테이션을 사용하면 해당클래스가 데이터베이스의 테이블과 매핑된다.
-    * @Entity 어노테이션은 클래스 선언 위에 위치해야 한다.
-    * 또한 name 속성을 사용하여 엔티티 클래스와 매핑할 테이블의 이름을 지정할 수 있다.
-    * 생략하면 자동으로 클래스 이름을 엔티티명으로 사용한다.
-    *
-    * 프로젝트 내에 다른 패키지에도 동일한 엔티티가 존재하는 경우 해당 엔티티를 식별하기 위한 중복되지 않은
-    * name을 지정해주어야한다.
-    *
-    * 기본생성자는 필수로 작성해야한다.
-    * final 클래수, enum, interface, inner class에서는 사용할 수 없다.
-    * 저장할 필드에 final을 사용하면 안된다.
-    *
-    * */
-@Entity(name = "member_section01")
-@Table(name = "tbl_MEMBER")
+* @Enumerated 어노테이션은 Enum 타입 매핑을 위해서 사용
+* */
+@Entity(name = "member_section04")
+@Table(name = "tbl_member_section04")
+//@TableGenerator(
+//        name = "member_seq_table_generator",
+//        table = "tbl_my_sequences",
+//        pkColumnName = "my_seq_member_no"
+//)
 public class Member {
 
         @Id
         @Column(name="member_no")
+//        @GeneratedValue(strategy = GenerationType.TABLE,
+//                generator = "member_seq_table_generator") //mysql 이라 auto 아이덴티티나 똑같다
         private int memberNo;
 
         @Column(name="member_id")
@@ -36,30 +27,34 @@ public class Member {
         private String memberPwd;
 
         @Column(name="nickname")
+//        @Transient      //테이블 생성할 때 무시된다.
         private String nickname;
 
-        @Column(name="phone")
+        @Column(name="phone", columnDefinition = "varchar(200) default '010-0000-0000'") //기본값설정 및 자료형
         private String phone;
 
-        @Column(name="email")
+        //unique = true 중복값이 들어갈수 없게 중복값이 들어갈 시
+        // 데이터베이스는 오류를 반환하고 삽입을 거부합니다.
+        @Column(name="email", unique = true)
         private String email;
 
-        @Column(name="address")
+        @Column(name="address", nullable = false) //(nullable = false)null 불가능 하다. 작성안할시 nullable = true 기본값
         private String address;
 
         @Column(name="enroll_date")
         private Date enrollDate;
 
         @Column(name="member_role")
-        private String memberRole;
+        @Enumerated(EnumType.ORDINAL) // enum으로 타입을 맞춰줘야 한다. String 일시 오류 @Enumerated' but its type 'java.lang.String' is not an enum
+        private RoleType memberRole;
 
-        @Column(name="status")
+        @Column(name="status", length = 3) //varchar 3 문자형 데이터길이 설정시에 사용된다 length
         private String status;
 
     public Member() {
     }
 
-    public Member(int memberNo, String memberId, String memberPwd, String nickname, String phone, String email, String address, Date enrollDate, String memberRole, String status) {
+    public Member(int memberNo, String memberId, String memberPwd, String nickname, String phone, String email, String address, Date enrollDate, RoleType memberRole, String status) {
         this.memberNo = memberNo;
         this.memberId = memberId;
         this.memberPwd = memberPwd;
@@ -83,7 +78,7 @@ public class Member {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", enrollDate=" + enrollDate +
-                ", memberRole='" + memberRole + '\'' +
+                ", memberRole=" + memberRole +
                 ", status='" + status + '\'' +
                 '}';
     }
@@ -152,11 +147,11 @@ public class Member {
         this.enrollDate = enrollDate;
     }
 
-    public String getMemberRole() {
+    public RoleType getMemberRole() {
         return memberRole;
     }
 
-    public void setMemberRole(String memberRole) {
+    public void setMemberRole(RoleType memberRole) {
         this.memberRole = memberRole;
     }
 

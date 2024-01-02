@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="58a0f9b7-9026-46fe-a62a-e09273cde582" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section02/column/ColumnMappingTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section02/column/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section03/primarykey/subsection01/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section03/primarykey/subsection01/PrimaryKeyMappingTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section03/primarykey/subsection02/table/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section03/primarykey/subsection02/table/SequenceTableMappingTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section04/enumtype/EnumTypeMappingTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section04/enumtype/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section04/enumtype/RoleType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section05/access/subsection01/field/FieldAccessTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section05/access/subsection01/field/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section05/access/subsection02/property/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section05/access/subsection02/property/PropertyAccessTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section06/compositekey/subsection01/embedded/EmbeddedKeyTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section06/compositekey/subsection01/embedded/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section06/compositekey/subsection01/embedded/MemberPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section06/compositekey/subsection02/idclass/IdClassTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section06/compositekey/subsection02/idclass/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section06/compositekey/subsection02/idclass/MemberPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/ohgiraffers/section01/manytoone/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/ohgiraffers/section01/manytoone/ManyToOneAssociationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/ohgiraffers/section01/manytoone/MenuAndCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap01-persistence-context/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap01-persistence-context/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap01-persistence-context/src/test/java/com/ohgiraffers/section03/persistencecontext/A_EntityLifeCycleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap01-persistence-context/src/test/java/com/ohgiraffers/section03/persistencecontext/A_EntityLifeCycleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section01/entity/EntityMappingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section01/entity/EntityMappingTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section01/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/java/com/ohgiraffers/section01/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap02-mapping0/src/test/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap02-mapping0/src/test/resources/META-INF/persistence.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2aO8XC9aX9CM1NXqDTLRKEdWzVo" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/dev/goodday/goodday/01_lectureSource/10_JPA/chap03-association-mapping/src/test/resources/META-INF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\goodday\goodday\01_lectureSource\10_JPA\chap03-association-mapping\src\test\resources\META-INF" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ManyToOneAssociationTests.manyToOneAssociationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ohgiraffers.section01.manytoone.ManyToOneAssociationTests.manyToOneAssociationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ManyToOneAssociationTests.manyToOneAssociationTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58a0f9b7-9026-46fe-a62a-e09273cde582" name="Changes" comment="" />
+      <created>1704178304608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704178304608</updated>
+      <workItem from="1704178305766" duration="2647000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

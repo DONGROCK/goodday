@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.entity;
+package com.ohgiraffers.section02.column;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -7,7 +7,8 @@ import org.junit.jupiter.api.*;
 
 import java.util.Date;
 
-public class EntityMappingTests {
+public class ColumnMappingTests {
+
     private static EntityManagerFactory entityManagerFactory;
 
     private EntityManager entityManager;
@@ -33,25 +34,24 @@ public class EntityMappingTests {
     }
 
 
-    @DisplayName("테이블만들기")
+    @DisplayName("컬럼에서 사용하는 속성 테스트")
     @Test
-    public void createTableTest(){
+    public void columnTest(){
+
         //given
-        Member member = new Member(); //비영속
+        Member member = new Member();
         member.setMemberNo(1);
         member.setMemberId("user01");
         member.setMemberPwd("pass01");
         member.setNickname("홍길동");
-        member.setPhone("010-1234-1234");
+        member.setPhone("010-1234-3210");
         member.setAddress("서울시 종로구");
         member.setEnrollDate(new Date());
         member.setMemberRole("ROLE_MEMBER");
         member.setStatus("Y");
         //when
-        entityManager.persist(member); //DML작업중에서 insert수행
+        entityManager.persist(member);//영속상태로
+
         //then
-        Member foundMember = entityManager.find(Member.class, member.getMemberNo());//조회
-        System.out.println("foundMember = " + foundMember);
-        Assertions.assertEquals(member.getMemberNo(), foundMember.getMemberNo());
     }
 }

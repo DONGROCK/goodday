@@ -1,14 +1,15 @@
-package com.ohgiraffers.section01.entity;
+package com.ohgiraffers.section04.enumtype;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import org.junit.jupiter.api.*;
 
 import java.util.Date;
 
-public class EntityMappingTests {
-    private static EntityManagerFactory entityManagerFactory;
+public class EnumTypeMappingTests {
+private static EntityManagerFactory entityManagerFactory;
 
     private EntityManager entityManager;
 
@@ -33,25 +34,31 @@ public class EntityMappingTests {
     }
 
 
-    @DisplayName("테이블만들기")
+    @DisplayName("enum타입 매핑 테스트")
     @Test
-    public void createTableTest(){
+    public void enumTypeMappingTest(){
         //given
-        Member member = new Member(); //비영속
+        Member member = new Member();
         member.setMemberNo(1);
         member.setMemberId("user01");
         member.setMemberPwd("pass01");
         member.setNickname("홍길동");
-        member.setPhone("010-1234-1234");
+        member.setPhone("010-1111-2222");
         member.setAddress("서울시 종로구");
         member.setEnrollDate(new Date());
-        member.setMemberRole("ROLE_MEMBER");
+        member.setMemberRole(RoleType.MEMBER);
         member.setStatus("Y");
+
+
         //when
-        entityManager.persist(member); //DML작업중에서 insert수행
+
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        entityManager.persist(member);
+        entityTransaction.commit();
         //then
-        Member foundMember = entityManager.find(Member.class, member.getMemberNo());//조회
-        System.out.println("foundMember = " + foundMember);
+        Member foundMember = entityManager.find(Member.class, member.getMemberNo());
         Assertions.assertEquals(member.getMemberNo(), foundMember.getMemberNo());
     }
 }

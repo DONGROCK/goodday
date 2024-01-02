@@ -1,28 +1,21 @@
-package com.ohgiraffers.section01.entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+package com.ohgiraffers.section02.column;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
-/*
-    * @Entity 어노테이션은 JPA에서 사용되는 엔티티 클래스임을 표시한다.
-    * 해당 어노테이션을 사용하면 해당클래스가 데이터베이스의 테이블과 매핑된다.
-    * @Entity 어노테이션은 클래스 선언 위에 위치해야 한다.
-    * 또한 name 속성을 사용하여 엔티티 클래스와 매핑할 테이블의 이름을 지정할 수 있다.
-    * 생략하면 자동으로 클래스 이름을 엔티티명으로 사용한다.
-    *
-    * 프로젝트 내에 다른 패키지에도 동일한 엔티티가 존재하는 경우 해당 엔티티를 식별하기 위한 중복되지 않은
-    * name을 지정해주어야한다.
-    *
-    * 기본생성자는 필수로 작성해야한다.
-    * final 클래수, enum, interface, inner class에서는 사용할 수 없다.
-    * 저장할 필드에 final을 사용하면 안된다.
-    *
-    * */
-@Entity(name = "member_section01")
-@Table(name = "tbl_MEMBER")
+/* 컬럼 매핑 시 @Column 어노테이션에 사용 가능한 속성들
+ * 1. name : 매핑할 테이블의 컬럼 이름
+ * 2. insertable : 엔티티 저장 시 필드 저장 여부 (default : true)
+ * 3. updatable : 엔티티 수정 시 필드 수정 여부 (default : true)
+ * 4. table : 엔티티와 매핑될 테이블 이름. 하나의 엔티티를 두 개 이상의 테이블에 매핑할 때 사용. (@SecondaryTable 사용)//사용비추
+ * 5. nullable : null값 허용 여부 설정. not null 제약조건에 해당함 (true 기본값)
+ * 6. unique : 컬럼의 유일성 제약 조건
+ * (두 개 이상 컬럼에 unique 제약조건을 설정하기 위해서는 클래스 레벨에서 @Table의 uniqueConstraints 속성에 설정)
+ * 7. columnDefinition : 직접 컬럼의 DDL을 지정
+ * 8. length : 문자열 길이. String 타입에서만 사용. (default : 255)
+ * */
+@Entity(name = "member_section02")
+@Table(name = "tbl_member_section02")
 public class Member {
 
         @Id
@@ -36,24 +29,28 @@ public class Member {
         private String memberPwd;
 
         @Column(name="nickname")
+        @Transient      //테이블 생성할 때 무시된다.
         private String nickname;
 
-        @Column(name="phone")
+        @Column(name="phone", columnDefinition = "varchar(200) default '010-0000-0000'") //기본값설정 및 자료형
         private String phone;
 
-        @Column(name="email")
+        @Column(name="email", unique = true) //
         private String email;
 
-        @Column(name="address")
+        @Column(name="address", nullable = false) //(nullable = false)null 불가능 하다.
         private String address;
 
         @Column(name="enroll_date")
+//        @Temporal(TemporalType.TIMESTAMP) //dateTime과 똑같
+//        @Temporal(TemporalType.DATE) // date
+        @Temporal(TemporalType.TIME) //time
         private Date enrollDate;
 
         @Column(name="member_role")
         private String memberRole;
 
-        @Column(name="status")
+        @Column(name="status", length = 3) //varchar 3
         private String status;
 
     public Member() {
