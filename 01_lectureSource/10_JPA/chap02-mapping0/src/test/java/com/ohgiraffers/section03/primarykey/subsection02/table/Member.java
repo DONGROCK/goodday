@@ -18,7 +18,7 @@ import java.util.Date;
 @Entity(name = "member_section03_subsection02")
 @Table(name = "tbl_member_section03_subsection02")
 @TableGenerator(
-        name = "member_seq_table_generator",
+        name = "member_seq_table_generator", //기본키의 이름
         table = "tbl_my_sequences",
         pkColumnName = "my_seq_member_no"
 )
@@ -26,8 +26,8 @@ public class Member {
 
         @Id
         @Column(name="member_no")
-        @GeneratedValue(strategy = GenerationType.TABLE,
-                generator = "member_seq_table_generator") //mysql 이라 auto 아이덴티티나 똑같다
+        @GeneratedValue(strategy = GenerationType.TABLE, //오토인크리먼트가 없는 테이블
+                generator = "member_seq_table_generator")
         private int memberNo;
 
         @Column(name="member_id")
@@ -48,7 +48,7 @@ public class Member {
         @Column(name="email", unique = true)
         private String email;
 
-        @Column(name="address", nullable = false) //(nullable = false)null 불가능 하다. 작성안할시 nullable = true 기본값
+        @Column(name="address", nullable = false) //(nullable = false)null  불가능 하다. 작성안할시 nullable = true 기본값
         private String address;
 
         @Column(name="enroll_date")

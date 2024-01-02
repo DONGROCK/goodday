@@ -61,15 +61,16 @@ public class SequenceTableMappingTests {
         member2.setStatus("Y");
         //when
         EntityTransaction entityTransaction = entityManager.getTransaction();
-        entityTransaction.begin();
+        entityTransaction.begin(); //db반영 시작
 
-        entityManager.persist(member);
-        entityManager.persist(member2);
+        entityManager.persist(member); //영속화
+        entityManager.persist(member2); //영속화
 
-        entityTransaction.commit();
+        entityTransaction.commit(); //db에 전송~
 
         //then
         String jpql = "SELECT A.memberNo FROM member_section03_subsection02 A";
+        //jpql의 결과타입을 Integer.class로 타입지정
         List<Integer> memberNoList = entityManager.createQuery(jpql, Integer.class).getResultList();
 
         memberNoList.forEach(System.out::println);

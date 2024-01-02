@@ -47,7 +47,6 @@ public class PropertyAccessTests {
             //then
             String jpql = "SELECT a.nickname FROM member_section05_subsection02 a WHERE a.memberNo = 1";
             String reqistedNickname = entityManager.createQuery(jpql, String.class).getSingleResult();
-
             Assertions.assertEquals("홍길동님", reqistedNickname);
 
         }
