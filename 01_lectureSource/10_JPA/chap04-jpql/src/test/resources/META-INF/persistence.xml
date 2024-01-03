@@ -3,15 +3,7 @@
 
     <persistence-unit name="jpaTest">
 <!--            클래스를 알려줘야 한다. 클래스는 프로포티스 위에 등록-->
-        <class>com.ohgiraffers.section01.manytoone.Category</class>
-        <class>com.ohgiraffers.section01.manytoone.MenuAndCategory</class>
-
-        <class>com.ohgiraffers.section02.onetomany.CategoryAndMenu</class>
-        <class>com.ohgiraffers.section02.onetomany.Menu</class>
-
-        <class>com.ohgiraffers.section03.bidirection.Menu</class>
-        <class>com.ohgiraffers.section03.bidirection.Category</class>
-
+<class>com.ohgiraffers.section01.simple.Menu</class>
         <properties>
 <!--            데이터베이스 연결정보-->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

@@ -14,6 +14,7 @@ public class Member {
     @Id
     @Column(name = "member_Id")
     private String memberId;
+
     @Column(name = "phone")
     private String phone;
     @Column(name = "address")

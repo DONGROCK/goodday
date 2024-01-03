@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 //getter, setter, tostring, equals hashCode, 생성자, 매개변수생성자 생성
 @Embeddable //임베드 될 수 있는 복합 키 타입을 지정할 때 사용하는 어노테이션
-public class MemberPK implements Serializable {//복합키
+public class MemberPK implements Serializable {//복합키 //직렬화를 하는 이유?
     @Column(name = "member_no")
     private int memberNo;
     @Column(name = "member_id")

@@ -1,11 +1,10 @@
-package com.ohgiraffers.section01.manytoone;
+package com.ohgiraffers.section03.bidirection;
 
 import jakarta.persistence.*;
 
-@Entity(name = "menu_and_category")
+@Entity(name = "bidirection_menu")
 @Table(name = "tbl_menu")
-public class MenuAndCategory {
-
+public class Menu {
     @Id
     @Column(name = "menu_code")
     private int menuCode;
@@ -14,32 +13,12 @@ public class MenuAndCategory {
     @Column(name = "menu_price")
     private int menuPrice;
     @JoinColumn(name = "category_code")
-    @ManyToOne(cascade = CascadeType.PERSIST) //엔티티 영속화 할 때 연관된 엔티티도 함께 영속화 된다
+    @ManyToOne
     private Category category;
     @Column(name = "orderable_status")
     private String orderableStatus;
 
-    public MenuAndCategory(int menuCode, String menuName, int menuPrice, Category category, String orderableStatus) {
-        this.menuCode = menuCode;
-        this.menuName = menuName;
-        this.menuPrice = menuPrice;
-        this.category = category;
-        this.orderableStatus = orderableStatus;
-    }
 
-    public MenuAndCategory() {
-    }
-
-    @Override
-    public String toString() {
-        return "MenuAndCategory{" +
-                "menuCode=" + menuCode +
-                ", menuName='" + menuName + '\'' +
-                ", menuPrice=" + menuPrice +
-                ", category=" + category +
-                ", orderableStatus='" + orderableStatus + '\'' +
-                '}';
-    }
 
     public int getMenuCode() {
         return menuCode;
@@ -78,6 +57,28 @@ public class MenuAndCategory {
     }
 
     public void setOrderableStatus(String orderableStatus) {
+        this.orderableStatus = orderableStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuCode=" + menuCode +
+                ", menuName='" + menuName + '\'' +
+                ", menuPrice=" + menuPrice +
+                ", category=" + category +
+                ", orderableStatus='" + orderableStatus + '\'' +
+                '}';
+    }
+
+    public Menu() {
+    }
+
+    public Menu(int menuCode, String menuName, int menuPrice, Category category, String orderableStatus) {
+        this.menuCode = menuCode;
+        this.menuName = menuName;
+        this.menuPrice = menuPrice;
+        this.category = category;
         this.orderableStatus = orderableStatus;
     }
 }
