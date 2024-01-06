@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.junit.jupiter.api.*;
 
 import java.awt.desktop.QuitEvent;
+import java.util.List;
 
 public class SimpleJPQLTests {
 
@@ -73,5 +74,102 @@ public class SimpleJPQLTests {
         String resultMenuName = query.getSingleResult();
         //then
         System.out.println("resultMenuName = " + resultMenuName);
+    }
+
+    @DisplayName("Query를 이용한 단일메뉴 조회 테스트")
+    @Test
+    public void querySingleMenuTest(){
+
+        //given
+        String jpql = "SELECT m.menuName FROM menu_section01 as m WHERE m.menuCode = 7";
+        
+        //when
+        Query query = entityManager.createQuery(jpql); //결과 값의 타입을 명시하지 않음
+        Object resultMenuName = query.getSingleResult(); //그래서 오브젝트
+        //then
+        Assertions.assertTrue(resultMenuName instanceof String);
+        Assertions.assertEquals("열무김치라떼", resultMenuName);
+
+    }
+    @DisplayName("TypedQuery 를 이용한 단일행 조회 테스트")
+    @Test
+    public void typedquerySingleRowTest(){
+        
+        //given
+        String jpql = "SELECT m FROM menu_section01 as m WHERE m.menuCode = 7";//별칭으로 행조회
+        //when
+        TypedQuery<Menu> query = entityManager.createQuery(jpql, Menu.class);//타입을 넣는 방식 알아둬
+        Menu foundMenu = query.getSingleResult();
+        //then
+        Assertions.assertEquals(7, foundMenu.getMenuCode());
+        System.out.println("foundMenu = " + foundMenu);
+    }
+
+    @DisplayName("TypeQuery를 이용한 다중행 조회 테스트")
+    @Test
+    public void TypedQueryListTest(){
+
+        String jpql = "SELECT m FROM menu_section01 as m";
+
+        TypedQuery<Menu> query = entityManager.createQuery(jpql, Menu.class);
+        List<Menu> foundMenuList = query.getResultList(); //getList니까 타입이 List<Menu>로
+
+        Assertions.assertNotNull(foundMenuList);
+        foundMenuList.forEach(System.out::println); //리스트니까 반복을 돌려
+    }
+
+    @DisplayName("Query를 이용한 다중행 조회 테스트")
+    @Test
+    public void QueryListTest(){
+
+        String jpql = "SELECT m FROM menu_section01 as m";
+
+        Query query = entityManager.createQuery(jpql);
+        List<Menu> foundMenuList = query.getResultList(); //List는 모든 타입을 다 받아준다. 그러면 꺼낼때 (인스턴스오브?)를 사용해서 꺼내야하기 때문 넣을 때 제네릭을 통해 정리
+
+        Assertions.assertNotNull(foundMenuList);
+        foundMenuList.forEach(System.out::println); //리스트니까 반복을 돌려
+    }
+
+    /*연산자는 SQL과 다르지 않으므로 몇가지 종류의 연산자만 테스트를 진행*/
+
+    @DisplayName("distinct를 활용한 중복제거 여러 행 조회 테스트")
+    @Test
+    public void distinctListTests(){
+
+        //given
+        String jpql = "SELECT DISTINCT m.categoryCode FROM menu_section01 m";//카테고리코드를 중복되지않게 조회
+        //when
+        TypedQuery<Integer> query = entityManager.createQuery(jpql, Integer.class);
+        List<Integer> categoryCodeList = query.getResultList();
+        //then
+        Assertions.assertNotNull(categoryCodeList);
+        categoryCodeList.forEach(System.out::println);
+    }
+
+    @DisplayName("in 연산자를 활용한 조회 테스트")
+    @Test
+    public void inoperatorTest(){
+        //given
+        String jpql = "SELECT m FROM menu_section01 m WHERE m.categoryCode IN (5, 7)"; //
+        //when
+        List<Menu> menuList = entityManager.createQuery(jpql, Menu.class).getResultList();
+
+        //then
+        Assertions.assertNotNull(menuList);
+        menuList.forEach(System.out::println);
+    }
+
+    @DisplayName("like 연산자를 활용한 조회 테스트")
+    @Test
+    public void listoperatorTest(){
+
+        //given
+        String jpql = "SELECT m FROM menu_section01 m WHERE m.menuName LIKE '%마늘%'";
+        //when
+        List<Menu> menuList = entityManager.createQuery(jpql, Menu.class).getResultList();
+        //then
+        Assertions.assertNotNull(menuList);
+        menuList.forEach(System.out::println);
     }
 }
