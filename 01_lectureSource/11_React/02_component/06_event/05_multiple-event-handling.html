@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src='https://unpkg.com/react@18/umd/react.development.js'></script>
+    <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+    <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+
+</head>
+
+<body>
+    <div id='root'></div>
+
+    <script type='text/babel'>
+
+            let obj = {//객체임
+                prop0: 'p0',
+                prop1: 'p1',
+                prop2: 'p2',
+            };
+
+            //얕은 복사
+            //원본 객체와 새 객체가 중첩된 객체나 배열에 대한 동일한 참조를 공유
+            //1. spread 연산자 연습
+            let objCopy = {...obj, prop2: 'modify'};
+            console.log(objCopy); 
+            
+            // 나머지파라미터의 내용을 배열형식으로 받아들인다 . 라고 설명해야댐
+            let [a, ...rest] = [1,2,3];
+            console.log(rest);
+            
+            //2. rest parameter
+            //위와 같은 이유로 restobj는 prop2:'b', prop3:'c'
+            let{prop1, ...restobj} = {prop1: 'a', prop2:'b', prop3:'c'};
+            console.log(restobj);
+            
+            class LoginComponent extends React.Component{
+                state = {
+                    username: '',
+                    password: '',
+                };
+            
+                // onChangeHandler1 = (e) => {
+                //     this.setState({
+                //         username: e.target.value
+                //     })
+                // }
+                // onChangeHandler2 = (e) => {
+                //     this.setState({
+                //         password: e.target.value
+                //     })
+                // }
+
+                    onChangeHandler = (e) => {
+                     console.log(e.target.name);
+                     
+                        this.setState({
+                            [e.target.name]: e.target.value
+                        })
+                    }
+
+                onClickHandler = (e) => {
+                    alert(`username: ${this.state.username} \n password : ${this.state.password}`);
+                    this.setState({
+                        username: '',
+                        password: '',
+                    })
+                }
+                
+                render(){
+                    return(
+                        <>
+                        <h1>로그인</h1>
+                        <label>아이디: </label>
+                        <input
+                            type="text"
+                            name="username" 
+                            placeholder="아이디를 입력하세요"
+                            value={this.state.username}
+                            onChange={this.onChangeHandler}
+                        />
+                        <br/>
+                        <label>비밀번호: </label>
+                        <input
+                            type="password"
+                            name="password" 
+                            placeholder="비밀번호를 입력하세요"
+                            value={this.state.password}
+                            onChange={this.onChangeHandler}
+                        />
+                        <br/>
+                        <button onClick={this.onClickHandler}>로그인</button>
+                    </>
+                    )
+                }
+
+            }
+ReactDOM.createRoot(document.getElementById('root')).render(<LoginComponent/>);
+    </script>
+</body>
+
+</html>

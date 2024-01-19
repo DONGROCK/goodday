@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+/*
+    promise는 콜백 지옥과 같은 코드가 형성되지 않게(비동기 통신간에 순서를 정하기 쉽게) 하는 방안으로
+    ES6에서 도입되었다.
+    (현재 시점에 ES6가 지원되는 브라우저에서 작업하고 있기 때문에 promise 사용을 위한 바벨은 필요가 없다.)
+    Promise는 세 가지 상태를 가집니다:
+
+    Pending (대기 중): 비동기 작업이 아직 완료되지 않은 초기 상태입니다.
+    Fulfilled (이행됨): 비동기 작업이 성공적으로 완료되었음을 나타냅니다.
+    Rejected (거부됨): 비동기 작업이 실패했거나 오류가 발생했음을 나타냅니다.
+*/
+
+        function increase(number){
+                            //첫번째 인자에 성공, 두번째 인자에 실패 에대한
+            // const asyncFunc = (resolve, reject) =>{
+
+            //     setTimeout(
+            //         ()=>{
+            //             const result = number + 10
+
+            //             return result
+            //         },
+            //         1000
+            //     )
+            // }
+            // asyncFunc(resolve, reject)
+
+            const promise = new Promise((resolve, reject) =>{
+                setTimeout(()=>{
+                    const result = number + 10
+                    if(result > 50){
+                        const e= new Error('NumberTooBig')
+
+                        return reject(e)
+                    }
+
+                    resolve(result)
+                },1000)
+            })
+
+            return promise
+
+        }
+
+        
+
+        console.log(increase(0));
+        console.log('----------');
+        console.log(increase(0));
+        console.log('----------');
+        /*
+            increase 함수 호출 후에는 promise가 반환된다.
+            이 promise는 resolve함수에 던져진 인수를 기억하고 있다.
+        */
+
+        increase(0)
+        .then((number) =>{
+            console.log(number);
+            return increase(number) //increase(10)
+            
+        })
+        .then((number) =>{
+            console.log(number);
+            return increase(number) //increase(10)
+            
+        })
+        .then((number) =>{
+            console.log(number);
+            return increase(number) //increase(10)
+            
+        })
+        .then((number) =>{
+            console.log(number);
+            return increase(number) //increase(10)
+            
+        })
+        .then((number) =>{
+            console.log(number);
+            return increase(number) //increase(10)
+            
+        })
+        
+        .then((number)=>{
+            console.log(number);
+            console.log('end');
+        
+        })
+        .catch((e)=>{
+            console.log(e, '가 발생했네!');
+            
+        })
+        .finally(()=>{
+            console.log("finally 실행..");
+            
+        })
+    </script>
+</body>
+</html>

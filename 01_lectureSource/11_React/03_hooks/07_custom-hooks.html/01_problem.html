@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            const { useState } = React;
+
+            function App() {
+                const [name, setName] = useState('');
+                const [password, setPassword] = useState('');
+                const [email, setEmail] = useState('');
+
+                // const handleName = (e) => {
+                //     setName(e.target.value);
+                //     // console.log(!!e.target.value.match(/[가-힣]+/));   //정규표현식을 조건식에
+                //     if(e.target.value.match(/[가-힣]+/))
+                //     console.log('너 한글 재능있어. 열심히 해');
+                    
+                    
+                // };
+
+                // const handlePassword = (e) => {
+                //     setPassword(e.target.value);
+                //     if(e.target.value.length >= 10){
+                //         console.log('너 비밀번호 재능있어. 열심히 해');
+                //     }
+                // };
+
+                // const handleEmail = (e) => {
+                //     setEmail(e.target.value);
+                // };
+
+                const handleName = (e) => {
+                    setName(e.target.value);
+                
+                };
+
+                const handlePassword = (e) => {
+                    setPassword(e.target.value);
+    
+                };
+
+                const handleEmail = (e) => {
+                    setEmail(e.target.value);
+
+                };
+
+
+                return (
+                    <>
+                        <div>
+                            <label>이름 : </label>
+                            <input type='text' onChange={handleName} />
+                            <br />
+                            <label>비밀번호 : </label>
+                            <input type='password' onChange={handlePassword} />
+                            <br />
+                            <label>이메일 : </label>
+                            <input type='email' onChange={handleEmail} />
+                            <br />
+                            <h4>name : {name}</h4>
+                            <h4>password : {password}</h4>
+                            <h4>email : {email}</h4>
+                        </div>
+                    </>
+                );
+            }
+            ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+        </script>
+    </body>
+</html>

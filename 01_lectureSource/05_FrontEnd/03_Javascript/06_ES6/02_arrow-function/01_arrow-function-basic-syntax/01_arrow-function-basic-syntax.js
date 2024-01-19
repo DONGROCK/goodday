@@ -30,6 +30,7 @@ console.log(message());
 
 //매개변수가 있을 경우
 message = (val1,val2) => 'Arrow' + val1 + val2;
+console.log("-----------매개변수가 있을 경우)");
 
 console.log(message('Function', '!'));
 
@@ -45,7 +46,7 @@ const createUser = (id, name) => (
 console.log(createUser(1, '원펀맨'));
 
 const createUser2 = (id, name) =>{
-    id, name;
+   return {id, name};
 };
 
 console.log(createUser2(2, '투펀맨'));

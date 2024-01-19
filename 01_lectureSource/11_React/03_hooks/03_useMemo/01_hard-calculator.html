@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src='https://unpkg.com/react@18/umd/react.development.js'></script>
+    <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+    <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+
+</head>
+
+<body>
+    <div id='root'></div>
+
+    <script type='text/babel'>
+
+        const {useState} = React;
+
+        const hardCalculator = (num) =>{ //hardNumber = 0 이 함수에 return이 없어서 undefined
+            console.log('어려운계산');
+            
+            for(let i = 0; i < 199999999; i++){}
+
+            return num + 10000
+        }
+
+        function App(){
+            const [hardNumber, setHardNumber] = useState(0)
+
+            /*input 태그의 변화(state의 변화)가 생길 때 마다 지역변수부터 return 구문까지 재실행(리렌더링) 된다.*/
+            const hardSum = hardCalculator(hardNumber) //지역변수는 state가 변화될 때마다 다시 초기화 된다.
+
+            console.log('하드썸!',hardSum);
+
+            return(
+                <>
+                <h3>어려운 계산기</h3>
+
+                <input 
+                type="number" 
+                value={hardNumber} 
+                onChange={e => setHardNumber(parseInt(e.target.value))}
+                />
+                <span> + 10000 = {hardSum}</span>
+                </>
+            )
+
+            
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+    </script>
+</body>
+
+</html>

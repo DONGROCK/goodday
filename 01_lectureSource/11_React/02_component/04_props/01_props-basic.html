@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src='https://unpkg.com/react@18/umd/react.development.js'></script>
+    <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+    <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+
+</head>
+
+<body>
+    <!-- 
+        props란?
+        properties의 약어로 컴포넌트의 속성을 설정할 때 사용하는 요소이다.
+        props 값은 해당 컴포넌트를 사용하는 부모 컴포넌트에서 설정할 수 있다.
+        (부모 컴포넌트가 없어도 props 재료를 컴포넌트에 줄 수 있다.)
+        props는 읽기 전용 객체이기 때문에 수정해서는 안된다.
+
+        리액트는 매우 유연하게 사용하짐나 한 가지 엄격한 규칙이 있다.
+        "모든 React 컴포넌트는 자신의 props 를다룰 때 반드시 순수함수처럼 동작해야한다."
+
+        동일한 입력 값에 대해 동일한 결과를 반환하는 것을 순수함수라고 한다.
+        컴포넌트는 반드시 순수함수처럼 작성되어야 한다.
+     -->
+    <div id='root'></div>
+
+    <script type='text/babel'>
+
+        const name1 = '홍동락';
+        const name2 = '강현강';
+
+        function Title(props){
+            console.log("props",props);
+            return <h1>안녕하세요 {props.name},{props.test}님 반갑습니다.</h1>;
+            
+        }
+        // props.name 이 존재하지 않는 경우 기본값을 설정
+        Title.defaultProps = {
+            name: '아무개',
+        };
+
+        ReactDOM.createRoot(document.getElementById('root')).render([
+            <Title name={name1} test='이동락' />,
+            <Title name={name2} />,
+            <Title name="이순식" />,
+            <Title test='테스터훈'/>,
+            <Title />,
+
+        ]
+        );
+    </script>
+    <!--
+         타이틀 함수에 매개변수 props를 받는다.
+
+리턴값은 [props.name](http://props.name) , props.test 이다.
+
+그리고 타이틀에 props.name이 존재하지 않다면 name에 ‘아무개’가 기본값으로 들어간다.
+
+렌더링한 값
+
+첫번째 줄은 name 즉 props.name이며 값은 위에 미리 선언해둔 
+
+상수 ‘홍동락’ 이 들어온다. 그리고 .test에 이동락이 들어오면서
+
+홍동락, 이동락 님 반갑습니다. 출력됨
+
+두번째는 name에 ‘강현강’이 들어오면서 값은 강현강님 반갑습니다.
+
+세번째는 렌더링과정에서 값을 집어 넣었다.
+
+값은 이순식님 반갑
+
+네번째는 test에 테스터훈 이라는 값을 넣었다.
+
+.name에는 주어진 값이 없기에 name디폴트값이 오면서 출력값은
+
+아무개님, 테스터훈님 반갑
+
+다섯번째 .name 도 .test 도 없기에 디폴트값만 출력이 된다.
+ -->
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src='https://unpkg.com/react@18/umd/react.development.js'></script>
+    <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+    <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+
+</head>
+
+<body>
+    <div id='root'></div>
+    <!-- 언마운트(화면에서 DOM 제거) 카테고리의 생명주기 메소드는 componentWillUnmount이며
+         언마운트 시 호출 된다. -->
+         <script type='text/babel'>
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            
+            class Greeting extends React.Component {
+                render() {
+                    return <h1>HELLO WORLD</h1>;
+                }
+        
+                componentWillUnmount() {
+                    /*componentDidMount 시점에 등록한 이벤트, 타이머, 직접 생성한 DOM이 있다면 여기서 다 제거하는 작업을 주로 하게 된다.*/
+                    console.log('componentWillUnmount');
+                }
+            }
+        
+            root.render(<Greeting/>);
+        
+            window.setTimeout(() => {
+                root.render(null);
+            }, 5000);
+        </script>
+</body>
+
+</html>

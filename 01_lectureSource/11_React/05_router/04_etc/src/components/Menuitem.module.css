@@ -1,0 +1,13 @@
+.MenuItem{
+    width: 300px;
+    background-color: hotpink;
+    cursor: pointer;
+    color: rebeccapurple;
+    border: 1px solid;
+    border-radius: 5%;
+}
+
+.MenuItem:hover{
+    background-color: red;
+    color: white;
+}
