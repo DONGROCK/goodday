@@ -109,7 +109,7 @@
                 const onChangeHandler = (e) => {
 
                     const changeIsDoneList = todos.map((todo) =>{
-                        if(todo.id === parseInt(e.target.id)){
+                        if(todo.num === parseInt(e.target.num)){
                             todo.isDone = e.target.checked
 
                         }
@@ -119,18 +119,29 @@
                 }
                 // console.log("isDone",isDone);
                 
-                
+                const removeTodo = (num) => {
+                        const removedList = todos.filter((todo) => todo.num !== num)
+                        setTodos(removedList)
+                    }
 
                 return (
                     <>
+                todos.map(todo => (
                         {/* 반복 */}
-                        <p>
-                            <input type='checkbox' />
-                            <label>{}</label>
-                            <button>x</button>
+                        <p key={todo.num}>
+                            <input type='checkbox' id={todo.num} onChange={onChangeHandler}/>
+                            <label 
+                            htmlFor={todo.num}
+                            style={{textDecoration: todo.isDone ? 'line-through':'none'}}
+                            >
+                            {todo.name}
+                            </label>
+                            <button onClick={() => removeTodo(todo.num)}>x</button>
                         </p>
-                    </>
-                );
+                        )
+                    )
+                        </>
+                )
             }
 
             function TodoList() {

@@ -18,15 +18,21 @@
     <script type='text/babel'>
         const { useState } = React;
 
+        //useState는 배열 구조 분해 할당을 사용하여 반환된 값
+        //useState는 클래스컴포넌트의 this.state와 유사한 역할을 수행
 
 
         function LoginComponent() {
+            //useState('')는 username을 생성 ('')로 초기화
+            //username은 현재값 setUsername은 업데이트된 상태값
             const [username, setUsername] = useState('');
             const [password, setPassword] = useState('');
 
             //이벤트
+            //온체인지 이벤트에 사용자가 입력한 값이 setUsername에 업데이트된다.
             const onChangeUsername = e => setUsername(e.target.value);
             const onChangePassword = e => setPassword(e.target.value);
+            //온클릭 이벤트버튼을 실행 시 경고창실행 username, password출력 후 다시 상태값 초기화
             const onClickHandler = e => {
                 alert(`username: ${username} \n password: ${password}`);
                 setUsername('');

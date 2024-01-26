@@ -1,0 +1,12 @@
+### 회원가입
+POST http://localhost:8001/singup
+Content-Type: application/json
+Accept: */*
+
+{
+  "userId": "user01",
+  "userPass": "pass01",
+  "userName": "홍길동",
+  "userEmail": "hong123@gmail.com",
+  "role": "ADMIN"
+}

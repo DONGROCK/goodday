@@ -27,16 +27,16 @@
             //원본 객체와 새 객체가 중첩된 객체나 배열에 대한 동일한 참조를 공유
             //1. spread 연산자 연습
             let objCopy = {...obj, prop2: 'modify'};
-            console.log(objCopy); 
+            console.log('objcopy',objCopy); 
             
             // 나머지파라미터의 내용을 배열형식으로 받아들인다 . 라고 설명해야댐
             let [a, ...rest] = [1,2,3];
-            console.log(rest);
+            console.log('rest',rest);
             
             //2. rest parameter
             //위와 같은 이유로 restobj는 prop2:'b', prop3:'c'
             let{prop1, ...restobj} = {prop1: 'a', prop2:'b', prop3:'c'};
-            console.log(restobj);
+            console.log('restobj',restobj);
             
             class LoginComponent extends React.Component{
                 state = {
@@ -54,15 +54,17 @@
                 //         password: e.target.value
                 //     })
                 // }
-
+                    // 화살표함수를 사용하면 생성자에서 바인딩 해주는 과정을 생략할수있음
+                    // 입력받을 때 마다 값이 수정되고 콘솔에는 e.target.name이 콘솔에 입력이된다.
+                    //입력필드는 username 이므로 this.state.username이 입력값으로 업데이트된다.
                     onChangeHandler = (e) => {
-                     console.log(e.target.name);
+                     console.log('onchangehandler',e.target.name);
                      
                         this.setState({
                             [e.target.name]: e.target.value
                         })
                     }
-
+                    // 경고창에 입력받은 이름과 패스워드를 출력하고 이름과 패스워드를 ''로 초기화 한다.
                 onClickHandler = (e) => {
                     alert(`username: ${this.state.username} \n password : ${this.state.password}`);
                     this.setState({

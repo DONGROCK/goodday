@@ -21,24 +21,31 @@
 
 
         function LoginComponent() {
+            //useState를 사용하여 from상태객체생성
+            //username,password를 빈문자열로 초기화
             const [form, setForm] = useState({
                 username: '',
                 password: '',
             });
 
+            //from객체에서 username, password의 속성을 추출하기 위해
             const {username, password} = form; //객체의 구조분해할당
             
 
             //이벤트
             const onChangeHandler = e => {
                 const changeForm = {
-                    ...form,                        //스프레드 연산자를 사용해서 기존 form 객체의 rest parameter복사
-                    [e.target.name]: e.target.value,//이벤트가 발생한 name과 일치하는 프로퍼티값은 value값으로 수정
+                //스프레드 연산자(...)를 사용해서 기존 form 객체의 rest parameter복사
+                    ...form,                        
+                //이벤트가 발생한 name과 일치하는 프로퍼티값은 value값으로 수정(업데이트)
+                    [e.target.name]: e.target.value,
                 }
 
-                setForm(changeForm); //                 통째로 수정한 객체를 setForm에 던져준다.
+                //통째로 수정한 객체를 setForm에 던져준다.
+                setForm(changeForm); 
             }
-
+                // 이벤트 호출 시 경고창으로 업데이트된 name, pw를 출력 후
+                // 다시 빈문자열로 업데이트 한다.
             const onClickHandler = e => {
                 alert(`username: ${username} \n password: ${password}`);
                setForm({

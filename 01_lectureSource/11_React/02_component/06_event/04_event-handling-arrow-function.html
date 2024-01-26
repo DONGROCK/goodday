@@ -27,23 +27,30 @@ class EventComponent extends React.Component {
     contructor에서 말하는(컴포넌트 자신) this와 바인딩하는 작업이 필요하다.
 */
 
+
+/*(state)상태값을 객체로 가지고 있따.*/
+///gpt설명 message라는 속성을 state 객체안에 정의하고 message의 초기값을 ''(빈문자열)로 설정
+// state에 message를 초기화 한 후 message 값을 ''로 초기화
 state = {
     message: '',
-};
-
+}
+//GPT onChangeHandler와 onClickHandler라는 두 메소드를 현재 컴포넌트의 인스턴스(this)에 바인딩
+// onChangeHandler, onClickHandler를 사용하기 위해 생성자에 바인딩 해준다.
 constructor(props){
-    super(props);
+    super(props); // React.Component 의 생성자를 호출 하는 것
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
 }
-
+//onChange이벤트에 의해 호출 시 (사용자가 입력필드에 텍스트를 입력할 때마다 message 상태에 저장)
+//사용자가 입력한 값(e.target.value)으로 수정해 준다. 
 onChangeHandler(e) {
     this.setState({
         message: e.target.value,
     });
 }
-
+// onClick이벤트에 의해 호출 시 경고창이 뜬다. 내용은 입력된 메시지 
+// 그리고 message의 값을 ''로 초기화
 onClickHandler(e){
     alert(this.state.message);
 

@@ -24,6 +24,8 @@
             };
 
             render(){
+                console.log('어');
+                
 
                 return(
                 <>
@@ -33,13 +35,13 @@
                         name="message"
                         placeholder="텍스트를 입력해주세요"
                         onChange={(e) => {
-                             console.log(e.target.value);
+                             console.log(e.target.value); // 사용자 입력값을 콘솔에 출력
                              this.setState({message: e.target.value});
                             }
                         }
                         value={this.state.message}
                     />
-                    <botton 
+                    <botton style={{backgroundColor: 'gray'}}
                     onClick={() => {
                             alert(`${this.state.message} 지워짐!`);
                             this.setState({message: ''});

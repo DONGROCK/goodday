@@ -31,13 +31,19 @@
             };
 
             constructor(props){
-                super(props);
-
-                this.onChangeHandler = this.onChangeHandler.bind(this);
-                this.onClickHandler = this.onClickHandler.bind(this);
+                super(props); //부모클래스  React.Component의 생성자를 실행
+                console.log("프롭스",props);
+                console.log(this); // 여기서 this란 클래스 그자체를 말함
+                console.log(this.state); // 클래스안에 있는 state 를 말하는것
+                
+                
+                // this.onChangeHandler = this.onChangeHandler.bind(this);
+                // this.onClickHandler = this.onClickHandler.bind(this);
             }
 
             onChangeHandler(e){
+                // console.log(message);
+                
                 this.setState({
                     message: e.target.value,
                 });

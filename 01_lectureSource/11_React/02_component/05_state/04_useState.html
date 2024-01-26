@@ -34,7 +34,7 @@
             const [message, setMessage] = useState('기본상태')
             console.log(message);
             
-            const[color, setColor] = useState('balck');
+            const[color, setColor] = useState('black');
             const [backgroundColor, setBackgroundColor] = useState('white');
             
             const onClickEnter = () => setMessage('안녕하세요')
@@ -57,7 +57,7 @@
                             <button
                                 onClick={() => {
                                     setBackgroundColor('white');
-                                    setColor('black');
+                                    // setColor('black');
                                 }}
                             >
                                 기본배경
@@ -65,7 +65,7 @@
                             <button
                                 onClick={() => {
                                     setBackgroundColor('black');
-                                    setColor('white');
+                                    // setColor('white');
                                 }}
                             >
                                 반전배경

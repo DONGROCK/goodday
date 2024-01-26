@@ -55,12 +55,36 @@
 
             // 3. component에 이벤트를 props 로 전달 후 연결
              render(){
+                 /*
+                 구조 분해 할당: EventButton 컴포넌트의 render 메소드에서 this.props로부터
+                 onClick과 children을 구조 분해 할당을 통해 추출합니다.
+                 이렇게 하면 this.props.onClick과 this.props.children을 직접 사용하는 것보다 코드가 더 간결
+                 해지고, 가독성이 좋아집니다.
+                 */
                 console.log(this.props);
-
+                
                 const {onClick, children} = this.props;
+                
+                console.log('온클릭',onClick);
+                
+                console.log('칠드런',children);
+                
+                console.log();
+                
 
                 return (
                     <button onClick={onClick}>{children}</button>
+                    /*
+                    EventButton의 역할: EventButton 컴포넌트는 원래 버튼의 기능을 내장하고 있지 않지만,
+                     render 메소드에서 <button> 요소를 반환함으로써 실제 버튼처럼 동작하게 됩니다.
+                    이 버튼에는 구조 분해 할당으로 추출된 onClick prop이 이벤트 핸들러로 할당됩니다.
+                    */ 
+                   /*
+                   Children prop의 사용: render 메소드에서 반환하는 <button> 요소 내부에 children이 삽입됩니다.
+                     children은 EventButton 컴포넌트를 사용할 때 
+                     컴포넌트 태그 사이에 작성된 내용 (<EventButton>여기에 있는 내용</EventButton>)입니다. 
+                     이 경우에는 "이벤트 버튼" 텍스트가 해당합니다.
+                   */
                 )
             }
         }
@@ -74,3 +98,4 @@
 </body>
 
 </html>
+<!--  -->
